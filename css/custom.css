@@ -16,8 +16,14 @@ body{
 .header-title{
 	top: 15%;
 	position: relative;
-	font-size: 3.5em;
+	font-size: 2em;
 	display: none;
+}
+
+@media (min-width: 768px) {
+    .header-title{
+		font-size: 3.5em;
+	}
 }
 
 .navbar-custom{
@@ -46,5 +52,3 @@ body{
 	transition: background-color 0.5s ease;
 	background-color: #607D8B;
 }
-
-.navbar-custom button:
