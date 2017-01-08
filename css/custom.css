@@ -9,9 +9,10 @@ body{
 	bottom: 0;
 	left: 0;
 	text-align: center;
-	background-color: #424242;
 	color: #f5f5f5;
+	background: url('imgs/bg.jpg');
 }
+
 
 .header-title{
 	top: 15%;
