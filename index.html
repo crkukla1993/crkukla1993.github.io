@@ -11,24 +11,85 @@
 	</head>
 
 	<body>
-		<div class="cover">
-			<h1 class="header-title">Christopher Kukla</h1>
-			
-			<div class="navbar-custom">
-				<button type="button">
-					<span>About Me</span>
-				</button>
-				<button type="button">
-					<span>Portfolio</span>
-				</button>
-				<button type="button">
-					<span>Skills</span>
-				</button>
+		<div class="header-div">
+			<div class="blur"></div>
+			<table>
+				<tr>
+					<td align="center">
+						<h1 class="header-title">&#60;&#47;Christopher Kukla></h1>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<h2 class="secondary-title">
+							<span class="s1">&#60;&#47;Programmer>&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+							<span class="s2">&#60;&#47;Web Developer>&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+							<span class="s3">&#60;&#47;Professional></span>
+						</h2>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<div class="navbar-custom">
+							<button id="aboutmebtn" type="button">
+								<span>About Me</span>
+							</button>
+							<button id="portfoliobtn" type="button">
+								<span>Portfolio</span>
+							</button>
+							<button id="skillsbtn" type="button">
+								<span>Skills</span>
+							</button>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div style="height: 100%;">
+				<img id="downarrow" style="left: 50%; bottom: 5px; position: absolute;" width="75px" src="imgs/chevron-down.png" />
 			</div>
 		</div>
-		
-		
+		<div id="aboutme" style="margin-top: -21px; z-index: 1;">
+			<div style="height: 100%; float: left; width: 33%; background: #607D8B; margin-right: 50px;">
+				<div style="text-align: center;">
+					<h1 style="color: #f5f5f5; font-size: 2em; padding: 20px;">
+						&#60;&#47;About Me>
+					</h1>
+					<img width="60%" style="border-radius: 50%; border: 10px solid #f5f5f5;" src="imgs/me.jpg"/>
+
+					<p style="color: #f5f5f5; font-size: 1.2em;">
+						
+					</p>
+				</div>
+
+			</div>
+			<div style="width: 100%; background: #f5f5f5; height: 100%;">
+				<p style="color: black; font-size: 1.2em; padding: 50px;">
+					THIS IS A TEST
+				</p>
+			</div>
+		</div>
+		<div id="portfolio" style="margin-top: -2px; z-index: 1;">
+			<div style="height: 100%; clear: left; float: left; width: 33%; text-align: center; background: darkgrey;">
+				<h1 style="color: #f5f5f5; font-size: 2em;">&#60;&#47;Portfolio></h1>
+			</div>
+			<div style="width: 100%; background: white; height: 100%; ">
+			
+			</div>
+		</div>
+		<div id="skills" style="margin-top: -2px; z-index: 1;">
+			<div style="height: 100%; clear: left; float: left; width: 33%; text-align: center; background: grey;">
+				<h1 style="color: #f5f5f5; font-size: 2em;">&#60;&#47;Skills></h1>
+			</div>
+			<div style="width: 100%; background: #f5f5f5; height: 100%; ">
+			
+			</div>
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
 		<script src="js/custom.js"></script>
+		<footer style="background: black; width: 100%; height: 200px;">
+		
+		</footer>
 	</body>
 </html>
