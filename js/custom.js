@@ -190,7 +190,7 @@ $(document).ready(function(){
 			st.height(stxt.height());
 		}
 		else{
-			stxt.height(sr.height());
+			stxt.height(st.height());
 		}
 		
 		if(h < 480){
