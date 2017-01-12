@@ -79,7 +79,7 @@ $(document).ready(function(){
 		st.height(stxt.height());
 	}
 	else{
-		stxt.height(sr.height());
+		stxt.height(st.height());
 	}
 	
 	var h = $(window).height();
@@ -177,7 +177,7 @@ $(window).scroll(function(){
 	aboutMeCardPositions();
 	portfolioCardPostions();
 	skillsCardPostions();
-	
+	var t;
 	if($('html body').scrollTop() === 0){
 		$('#downarrow').animate({opacity: 1}, {queue: false, duration: 300});
 	
@@ -190,7 +190,7 @@ $(window).scroll(function(){
 		}, 8000);
 	}
 	else{
-		if(t != undefined){
+		if(t != null){
 			clearTimeout(t);
 		}
 		bounced = false;
