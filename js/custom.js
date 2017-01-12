@@ -50,14 +50,17 @@ $(document).ready(function(){
 	$('#aboutmebtn').click(function(){
 		var i = $("#aboutmetitle").position().top;
 		$('html body').animate({scrollTop: i}, 1500);
+		return false;
 	});
 	$('#portfoliobtn').click(function(){
 		var i = $("#portfoliotitle").position().top;
 		$('html body').animate({scrollTop: i}, 1500);
+		return false;
 	});
 	$('#skillsbtn').click(function(){
 		var i = $("#skillstitle").position().top;
 		$('html body').animate({scrollTop: i}, 1500);
+		return false;
 	});
 	
 	var bounced = false;
@@ -71,6 +74,10 @@ $(document).ready(function(){
 	}, 8000);
 	
 	$(window).scroll(function(){
+		aboutMeCardPositions();
+		portfolioCardPostions();
+		skillsCardPostions();
+		return false;
 		if($('html body').scrollTop() === 0){
 			$('#downarrow').animate({opacity: 1}, {queue: false, duration: 300});
 		
@@ -86,115 +93,113 @@ $(document).ready(function(){
 			bounced = false;
 			$('#downarrow').animate({opacity: 0}, {queue: false, duration: 300});
 		}
+		return false;
 	});
-});
-
-$(document).scroll(function(){
-	aboutMeCardPositions();
-	portfolioCardPostions();
-	skillsCardPostions();
-})
-
-function aboutMeCardPositions(){
-	var amh = $('#aboutmetitle').height();
-	var amt = $('#aboutmetitle').position().top;
-	var pgt = $('html body').scrollTop() + amh;
-	if(pgt < amt){
-		var percent = pgt/amt;
-		var wid0 = $('#aboutmetitle').outerWidth()*2;
-		var wid1 = $('#aboutmetext').outerWidth()*2;
-
-		var amount0 = ((wid0 * percent) - wid0) + 'px';
-		var amount1 = ((wid1 * percent) - wid1) + 'px';
-
-		$('#aboutmetitle').css('marginLeft', amount0);
-		$('#aboutmetext').css('marginRight', amount1);
-	}
-	else{
-		$('#aboutmetitle').css('marginLeft', 0);
-		$('#aboutmetext').css('marginRight', 0);
-
-	}
-}
-
-function portfolioCardPostions(){
-	var ph = $('#portfoliotitle').height();
-
-	var pgt = $('html body').scrollTop() + ph;
-	var pt = $('#portfoliotitle').position().top;
-	if(pgt < pt){
-		var percent = pgt/pt;
-		var wid = $('#portfoliotitle').outerHeight()*2;
-
-		var amount = (-1*((wid * percent) - wid)) + 'px';
-
-		$('#portfoliotitle').css('marginTop', amount);
-	}
-	else{
-		$('#portfoliotitle').css('marginTop', 0);
-
-	}
-}
-
-function skillsCardPostions(){
-	var sh = $('#skillstitle').height();
-
-	var pgt = $('html body').scrollTop() + sh;
-	var st = $('#skillstitle').position().top;
-	var stxt = $('#skillstext').position().top;
-
-	if(pgt < st){
-		var percentW = pgt/st;
-		var percentH = pgt/stxt;
-
-		var wid = $('#skillstitle').outerWidth()*4;
-		var hei = $('#skillstext').outerHeight()*4;
-		var amountW = (((wid * percentW) - wid)) + 'px';
-		var amountH = (-1*((hei * percentH) - hei)) + 'px';
-
-		$('#skillstitle').css('marginLeft', amountW);
-		$('#skillstext').css('marginTop', amountH);
-	}
-	else{
-		$('#skillstitle').css('marginLeft', 0);
-		$('#skillstext').css('marginTop', 0);
-	}
-}
-
-
-$(window).resize(function(){
-	var amt = $('#aboutmetitle');
-	var amtxt = $('#aboutmetext');
-	var h = $(window).height();
-	amt.height('auto');
-	amtxt.height('auto');
-	if(amt.height() < amtxt.height()){
-		amt.height(amtxt.height());
-	}
-	else{
-		amtxt.height(amt.height());
-	}
-	if(h < 480){
-		h = 480;
-	}
-	$('.header-title').css('marginTop', h*.3)
-	$('.blur').width($(window).width());
-	$('.blur').height(h);
-	
-	$('.header-div').width($(window).width());
-	$('.header-div').height(h);
 	
 	aboutMeCardPositions();
 	portfolioCardPostions();
 	skillsCardPostions();
 
-	//$('#aboutme').width($(window).width());
-	//$('#aboutme').height(h);
+	function aboutMeCardPositions(){
+		var amh = $('#aboutmetitle').height();
+		var amt = $('#aboutmetitle').position().top - amh/2;
+		var pgt = $('html body').scrollTop();
+		if(pgt < amt){
+			var percent = pgt/amt;
+			var wid0 = $('#aboutmetitle').outerWidth();
+			var wid1 = $('#aboutmetext').outerWidth();
+
+			var amount0 = ((wid0 * percent) - wid0) + 'px';
+			var amount1 = ((wid1 * percent) - wid1) + 'px';
+			$('#aboutmetitle').css('marginLeft', amount0);
+			$('#aboutmetext').css('marginRight', amount1);
+		}
+		else{
+			$('#aboutmetitle').css('marginLeft', 0);
+			$('#aboutmetext').css('marginRight', 0);
+		}
+		return false;
+	}
+
+	function portfolioCardPostions(){
+		var ph = $('#portfoliotitle').height();
+		var pt = $('#portfoliotitle').position().top - ph/2;   
+		var pgt = $('html body').scrollTop();
+		if(pgt < pt){
+			var percent = pgt/pt;
+			var wid = $('#portfoliotitle').outerWidth();
+
+			var amount = (((wid * percent) - wid)*2) + 'px';
+
+			$('#portfoliotitle').css('marginRight', amount);
+		}
+		else{
+			$('#portfoliotitle').css('marginRight', 0);
+		}
+		return false;
+	}
+
+	function skillsCardPostions(){
+		var sh = $('#skillstitle').height();
+		var st = $('#skillstitle').position().top - sh/2;
+		var stxt = $('#skillstext').position().top - sh/2;
+		var pgt = $('html body').scrollTop();
+		if(pgt < st){
+			var percentW = pgt/st;
+			var percentH = pgt/stxt;
+
+			var wid = $('#skillstitle').outerWidth();
+			var hei = $('#skillstext').outerHeight();
+			var amountW = ((((wid * percentW) - wid))*4) + 'px';
+			var amountH = ((-1*((hei * percentH) - hei))*4) + 'px';
+
+			$('#skillstitle').css('marginLeft', amountW);
+			$('#skillstext').css('marginTop', amountH);
+		}
+		else{
+			$('#skillstitle').css('marginLeft', 0);
+			$('#skillstext').css('marginTop', 0);
+		}
+		return false;
+	}
+
+
+	$(window).resize(function(){
+		var amt = $('#aboutmetitle');
+		var amtxt = $('#aboutmetext');
+		var h = $(window).height();
+		amt.height('auto');
+		amtxt.height('auto');
+		if(amt.height() < amtxt.height()){
+			amt.height(amtxt.height());
+		}
+		else{
+			amtxt.height(amt.height());
+		}
+		if(h < 480){
+			h = 480;
+		}
+		$('.header-title').css('marginTop', h*.3)
+		$('.blur').width($(window).width());
+		$('.blur').height(h);
 		
-	//$('#portfolio').width($(window).width());
-	//$('#portfolio').height(h);
+		$('.header-div').width($(window).width());
+		$('.header-div').height(h);
 		
-	//$('#skills').width($(window).width());
-	//$('#skills').height(h);
+		aboutMeCardPositions();
+		portfolioCardPostions();
+		skillsCardPostions();
+
+		//$('#aboutme').width($(window).width());
+		//$('#aboutme').height(h);
+			
+		//$('#portfolio').width($(window).width());
+		//$('#portfolio').height(h);
+			
+		//$('#skills').width($(window).width());
+		//$('#skills').height(h);
+		return false;
+		
+	});
 	
 });
