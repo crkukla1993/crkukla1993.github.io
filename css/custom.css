@@ -19,6 +19,100 @@ td{
 	
 }
 
+#aboutme{
+	margin-top: -1px;
+}
+
+#portfolio{
+	
+}
+
+#skills{
+	
+}
+
+#aboutmetitle{
+	width: 35%;
+	padding-bottom: 50px;
+	background: #607D8B;
+	float: left;
+}
+
+#aboutmetitle h1{
+	color: #f5f5f5;
+	font-size: 2em;
+	padding-left: 25px;
+}
+
+#aboutmetext{
+	width:65%;
+	background: #f5f5f5;
+	float: right;
+	padding-bottom: 25px;
+}
+
+#aboutmetext h3{
+	padding-top: 25px;
+	padding-left: 50px;
+	
+}
+
+#aboutmetext p{
+	color: black;
+	font-size: 1.2em;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#portfoliotitle{
+	width: 100%;
+	padding-bottom: 50px;
+	background: darkblue;
+	clear: both;
+	float: right;
+}
+
+#portfoliotitle h1{
+	color: #f5f5f5;
+	font-size: 2em;
+	padding-left: 25px;
+}
+	
+	
+#skillstitle{
+	width: 35%;
+	padding-bottom: 50px;
+	background: darkred;
+	float: left;
+	clear: both;
+}
+
+#skillstitle h1{
+	color: #f5f5f5;
+	font-size: 2em;
+	padding-left: 25px;
+}
+
+#skillstext{
+	width: 65%;
+	height: 100%;
+	background: #f5f5f5;
+	float: right;
+	padding-bottom: 25px;
+}
+
+#skillstext h3{
+	padding-top: 25px;
+	padding-left: 50px;
+}
+
+#skillstext p{
+	color: black;
+	font-size: 1.2em;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
 .s1{
 	margin-right: 2em;
 	visibility: hidden;
