@@ -61,6 +61,13 @@ function skillsCardPostions(){
 	return false;
 }
 
+function isMobileWidth(){
+	var isMobile = false;
+	if($(window).width() < 768){
+		isMobile = true;
+	}
+	return isMobile;
+}
 
 $(document).ready(function(){
 	var amt = $('#aboutmetitle');
@@ -113,90 +120,97 @@ $(document).ready(function(){
 	$('.header-div').width(w);
 	$('.header-div').height(h);
 	
-	var bounced = false;
-	
-	t = setTimeout(function(){
-		var n = $('#downarrow').css('opacity');
-		if($('#downarrow').css("opacity") !== '0' && !bounced){
-			$('#downarrow').effect('bounce', {times: 3}, 500);
-			bounced = true;
-		}
-	}, 8000);
-	
-	aboutMeCardPositions();
-	portfolioCardPostions();
-	skillsCardPostions();
+	if(!isMobileWidth){
+		var bounced = false;
+		
+		t = setTimeout(function(){
+			var n = $('#downarrow').css('opacity');
+			if($('#downarrow').css("opacity") !== '0' && !bounced){
+				$('#downarrow').effect('bounce', {times: 3}, 500);
+				bounced = true;
+			}
+		}, 8000);
+		
+		aboutMeCardPositions();
+		portfolioCardPostions();
+		skillsCardPostions();
+	}
 });
 
 $(window).resize(function(){
-	var amt = $('#aboutmetitle');
-	var amtxt = $('#aboutmetext');
-	var pt = $('#portfoliotext');
-	var st = $('#skillstitle');
-	var stxt = $('#skillstext');
-	var h = $(window).height();
-	var w = $(window).width();
-	amt.height('auto');
-	amtxt.height('auto');
-	pt.height('auto');
-	st.height('auto');
-	stxt.height('auto');
-	
-	if(amt.height() < amtxt.height()){
-		amt.height(amtxt.height());
+
+		var amt = $('#aboutmetitle');
+		var amtxt = $('#aboutmetext');
+		var pt = $('#portfoliotext');
+		var st = $('#skillstitle');
+		var stxt = $('#skillstext');
+		var h = $(window).height();
+		var w = $(window).width();
+		amt.height('auto');
+		amtxt.height('auto');
+		pt.height('auto');
+		st.height('auto');
+		stxt.height('auto');
+		
+		if(amt.height() < amtxt.height()){
+			amt.height(amtxt.height());
+		}
+		else{
+			amtxt.height(amt.height());
+		}
+		
+		if(st.height() < stxt.height()){
+			st.height(stxt.height());
+		}
+		else{
+			stxt.height(st.height());
+		}
+		
+		if(h < 480){
+			h = 480;
+		}
+		$('.header-title').css('marginTop', h*.3)
+		$('.blur').width(w);
+		$('.blur').height(h);
+		
+		$('.header-div').width(w);
+		$('.header-div').height(h);
+	if(!isMobileWidth()){		
+		aboutMeCardPositions();
+		portfolioCardPostions();
+		skillsCardPostions();
 	}
-	else{
-		amtxt.height(amt.height());
-	}
-	
-	if(st.height() < stxt.height()){
-		st.height(stxt.height());
-	}
-	else{
-		stxt.height(st.height());
-	}
-	
-	if(h < 480){
-		h = 480;
-	}
-	$('.header-title').css('marginTop', h*.3)
-	$('.blur').width(w);
-	$('.blur').height(h);
-	
-	$('.header-div').width(w);
-	$('.header-div').height(h);
-	
-	aboutMeCardPositions();
-	portfolioCardPostions();
-	skillsCardPostions();
 	return false;
-	
 });
 	
 $(window).scroll(function(){
-	aboutMeCardPositions();
-	portfolioCardPostions();
-	skillsCardPostions();
-	var t;
-	if($('html body').scrollTop() === 0){
-		$('#downarrow').animate({opacity: 1}, {queue: false, duration: 300});
-	
-		t = setTimeout(function(){
-			var a = $('#downarrow').css("opacity");
-			if(a !== '0' && !bounced){
-				$('#downarrow').effect('bounce', {times: 3}, 500);
-				bounced = true
-			}
-		}, 8000);
-	}
-	else{
-		if(t != null){
-			clearTimeout(t);
+	if(!isMobileWidth()){
+		aboutMeCardPositions();
+		portfolioCardPostions();
+		skillsCardPostions();
+		var t;
+		if($('html body').scrollTop() === 0){
+			$('#downarrow').animate({opacity: 1}, {queue: false, duration: 300});
+		
+			t = setTimeout(function(){
+				var a = $('#downarrow').css("opacity");
+				if(a !== '0' && !bounced){
+					$('#downarrow').effect('bounce', {times: 3}, 500);
+					bounced = true
+				}
+			}, 8000);
 		}
-		bounced = false;
-		$('#downarrow').animate({opacity: 0}, {queue: false, duration: 300});
+		else{
+			if(t != null){
+				clearTimeout(t);
+			}
+			bounced = false;
+			$('#downarrow').animate({opacity: 0}, {queue: false, duration: 300});
+		}
 	}
 });
+
+
 
 $('#aboutmebtn').click(function(){
 	var i = $("#aboutmetitle").position().top;

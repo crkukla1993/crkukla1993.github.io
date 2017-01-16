@@ -32,7 +32,7 @@ td{
 }
 
 #aboutmetitle{
-	width: 35%;
+	width: 100%;
 	padding-bottom: 50px;
 	background: #607D8B;
 	float: left;
@@ -45,9 +45,10 @@ td{
 }
 
 #aboutmetext{
-	width:65%;
+	width: 100%;
 	background: #f5f5f5;
-	float: right;
+	clear: both;
+	float: left;
 	padding-bottom: 25px;
 }
 
@@ -69,7 +70,6 @@ td{
 	padding-bottom: 50px;
 	background: darkblue;
 	clear: both;
-	float: right;
 }
 
 #portfoliotitle h1{
@@ -80,7 +80,8 @@ td{
 	
 	
 #skillstitle{
-	width: 35%;
+	width: 100%;
+	height: 100%;
 	padding-bottom: 50px;
 	background: darkred;
 	float: left;
@@ -94,10 +95,11 @@ td{
 }
 
 #skillstext{
-	width: 65%;
+	width: 100%;
 	height: 100%;
 	background: #f5f5f5;
-	float: right;
+	clear: both;
+	float: left;
 	padding-bottom: 25px;
 }
 
@@ -137,7 +139,7 @@ td{
 }
 
 .blur{
-	z-index:-1;
+	z-index:-999999;
 	top: 0;
 	left: 0;
 	margin-top: -10px;
@@ -182,6 +184,33 @@ td{
 	.header-btn{
 		font-size: 1.25em;
 	}
+	
+	#skillstitle{
+		width: 35%;
+	}
+	
+	#skillstext{
+		width: 65%;
+		clear: none;
+		float: right;
+	}
+	
+	#aboutmetitle{
+		width: 35%;
+	}
+	
+	#aboutmetext{
+		width: 65%;
+		clear: none;
+		float: right;
+	}
+	
+	#portfoliotitle{
+		clear: both;
+		float: right;
+	}
+	
+	
 }
 
 .header-btn{
