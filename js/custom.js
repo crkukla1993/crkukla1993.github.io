@@ -78,36 +78,74 @@ function skillsCardPostions(){
 	return false;
 }
 
+function setHeightsEven(){
+	var amt = document.getElementById('aboutmetitle');
+	var amtxt = document.getElementById('aboutmetext');
+	var amth;
+	var amtxth;
+	var st = document.getElementById('skillstitle');
+	var stxt = document.getElementById('skillstext');
+	var sth;
+	var stxth;
+	try {
+		amth = window.getComputedStyle(amt, null).getPropertyValue('height');
+		amtxth = window.getComputedStyle(amtxt, null).getPropertyValue('height');
+		sth = window.getComputedStyle(st, null).getPropertyValue('height');
+		stxth = window.getComputedStyle(stxt, null).getPropertyValue('height');
+	} catch(e) {
+		amth = amt.currentStyle.height;
+		amtxth = amtxt.currentStyle.height;
+		sth = st.currentStyle.height;
+		stxth = stxt.currentStyle.height;
+	} 
+	
+	if(!isMobileWidth()){		
+		if(amth < amtxth){
+			amt.style.height = amtxth;
+		}
+		else{
+			amtxt.style.height = amth;
+		}
+		
+		if(sth < stxth){
+			st.style.height = stxth;
+		}
+		else{
+			stxt.style.height = sth;
+		}
+	}
+}
+
 function isMobileWidth(){
 	var isMobile = false;
-	if($(window).width() < 768){
+	if(window.innerWidth < 800){
+		var da = document.getElementById('downarrow');
+		da.style.width = '50px';
+		da.style.marginLeft = '-20px';
 		isMobile = true;
+	}
+	else{
+		var da = document.getElementById('downarrow');
+		da.style.width = '75px';
+		da.style.marginLeft = '-35px';
 	}
 	return isMobile;
 }
 
+function displayContent(){
+	var content = document.getElementById('content-div');
+	content.style.display = 'block';
+
+}
+
 $(document).ready(function(){
-	var amt = $('#aboutmetitle');
-	var amtxt = $('#aboutmetext');
-	var st = $('#skillstitle');
-	var stxt = $('#skillstext');
-	if(!isMobileWidth()){
-		if(amt.height() < amtxt.height()){
-			amt.height(amtxt.height());
-		}
-		else{
-			amtxt.height(amt.height());
-		}
-		
-		if(st.height() < stxt.height()){
-			st.height(stxt.height());
-		}
-		else{
-			stxt.height(st.height());
-		}
-	}
+	var header = document.getElementsByClassName('blur');
+	var img = document.getElementById('profilepic');
 	var h = $(window).height();
 	var w = $(window).width();
+	
+	header.onload = displayContent();
+	img.onload = setHeightsEven();
 
 	$('.header-title')
 	.animate({opacity: 'show'}, {queue: false, duration: 1500})
@@ -136,10 +174,9 @@ $(document).ready(function(){
 	
 	$('.header-div').width(w);
 	$('.header-div').height(h);
-	
+	var t;
 	if(!isMobileWidth()){
 		var bounced = false;
-		
 		t = setTimeout(function(){
 			var n = $('#downarrow').css('opacity');
 			if($('#downarrow').css("opacity") !== '0' && !bounced){
@@ -166,21 +203,8 @@ $(window).resize(function(){
 	pt.height('auto');
 	st.height('auto');
 	stxt.height('auto');
-	if(!isMobileWidth()){		
-		if(amt.height() < amtxt.height()){
-			amt.height(amtxt.height());
-		}
-		else{
-			amtxt.height(amt.height());
-		}
-		
-		if(st.height() < stxt.height()){
-			st.height(stxt.height());
-		}
-		else{
-			stxt.height(st.height());
-		}
-	}
+	
+	setHeightsEven();
 	
 	if(h < 480){
 		h = 480;

@@ -19,8 +19,12 @@ td{
 	
 }
 
+#content-div{
+	display: none;
+}
+
 #aboutme{
-	margin-top: -1px;
+
 }
 
 #portfolio{
@@ -33,7 +37,8 @@ td{
 
 #aboutmetitle{
 	width: 100%;
-	padding-bottom: 50px;
+	padding-top: 0;
+	padding-bottom: 20px;
 	background: #607D8B;
 	float: left;
 }
@@ -42,6 +47,22 @@ td{
 	color: #f5f5f5;
 	font-size: 2em;
 	padding-left: 25px;
+}
+
+#aboutmetitle h2{
+	padding-left: 25px;
+	padding-right: 25px;
+	color: #f5f5f5;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+#aboutmetitle h3{
+	color: #f5f5f5;
+	font-size: 1em;
+	padding-left: 25px;
+	padding-right: 25px;
+	text-align: center;
 }
 
 #aboutmetext{
@@ -67,7 +88,8 @@ td{
 
 #portfoliotitle{
 	width: 100%;
-	padding-bottom: 50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	background: darkblue;
 	clear: both;
 }
@@ -81,7 +103,8 @@ td{
 	
 #skillstitle{
 	width: 100%;
-	padding-bottom: 50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	background: darkred;
 	float: left;
 	clear: both;
@@ -89,8 +112,7 @@ td{
 
 #skillstitle h1{
 	color: #f5f5f5;
-	font-size: 2em;
-	padding-left: 25px;
+	font-size: 1.5em;
 }
 
 #skillstext{
@@ -170,7 +192,38 @@ td{
 	text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1050px) {
+	#aboutmetitle h1{
+		font-size: 2.5em;
+	}
+	
+	#aboutmetitle h2{
+		font-size: 2em;
+	}
+		
+	#aboutmetitle h3{
+		font-size: 1.25em;
+	}
+
+}
+
+@media (max-width: 900px) {
+
+	#aboutmetitle h3{
+		font-size: 1em;
+	}
+}
+@media (max-width: 800px) {
+	#aboutmetitle h2{
+		font-size: 2em;
+	}
+}
+@media (max-width: 500px) {
+	#aboutmetitle h2{
+		font-size: 1.5em;
+	}
+}
+@media (min-width: 800px) {
     .header-title{
 		font-size: 3.5em;
 	}
@@ -182,23 +235,23 @@ td{
 	.header-btn{
 		font-size: 1.25em;
 	}
-	
+
 	#skillstitle{
-		width: 35%;
+		width: 40%;
 	}
 	
 	#skillstext{
-		width: 65%;
+		width: 60%;
 		clear: none;
 		float: right;
 	}
 	
 	#aboutmetitle{
-		width: 35%;
+		width: 40%;
 	}
 	
 	#aboutmetext{
-		width: 65%;
+		width: 60%;
 		clear: none;
 		float: right;
 	}
@@ -207,8 +260,6 @@ td{
 		clear: both;
 		float: right;
 	}
-	
-	
 }
 
 .header-btn{
