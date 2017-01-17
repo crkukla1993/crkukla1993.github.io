@@ -1,3 +1,5 @@
+var isClickable = true;
+
 function aboutMeCardPositions(){
 	if(!isMobileWidth()){
 		var amh = $('#aboutmetitle').height();
@@ -37,13 +39,18 @@ function portfolioCardPostions(){
 			var amount = (((wid * percent) - wid)*2) + 'px';
 
 			$('#portfoliotitle').css('marginRight', amount);
+			var a = (1 + percent)/2;
+			$('#portfoliotitle table').css('opacity', a);
+
 		}
 		else{
 			$('#portfoliotitle').css('marginRight', 0);
+			$('#portfoliotitle table').css('opacity', 1);
+
 		}
 	}
 	else{
-		
+		$('#portfoliotitle table').css('opacity', 1);
 	}
 	return false;
 }
@@ -136,6 +143,140 @@ function displayContent(){
 	var content = document.getElementById('content-div');
 	content.style.display = 'block';
 
+}
+
+function closePortfolio(e){
+	if(isClickable){
+		isClickable = false;
+		document.getElementById('closeportfolio').style.display = 'none';
+		document.getElementById('onp').style.backgroundImage = 'url("./imgs/onp.jpg")'
+		document.getElementById('onpuser').style.backgroundImage = 'url("./imgs/onpuser.jpg")'
+		document.getElementById('ebid').style.backgroundImage = 'url("./imgs/ebid.jpg")'
+		document.getElementById('carpool').style.backgroundImage = 'url("./imgs/carpool.jpg")'
+		$('#onp').width('100%');
+		$('#onpuser').width('100%');
+		$('#ebid').width('100%');
+		$('#carpool').width('100%');
+		$('#onpp').width('100%');
+		$('#onpuserp').width('100%');
+		$('#ebidp').width('100%');
+		$('#carpoolp').width('100%');
+		setTimeout(function(){
+		$('#onp-cell').width('25%');
+		}, 250);
+		setTimeout(function(){
+			$('#onpuser-cell').width('25%');
+		}, 250)
+		setTimeout(function(){
+			$('#ebid-cell').width('25%');
+		}, 250)
+		setTimeout(function(){
+			$('#carpool-cell').width('25%');
+		}, 250)
+		setTimeout(function(){
+			$('#onpp').animate({opacity: 1}, 500);
+			$('#onpuserp').animate({opacity: 1}, 500);
+			$('#ebidp').animate({opacity: 1}, 500);
+			$('#carpoolp').animate({opacity: 1}, 500);
+			isClickable = true;
+		}, 1250);
+	}
+}
+
+function workClicked(e){
+	document.getElementById('closeportfolio').style.display = 'block';
+	if(e.id === 'onp-cell' && isClickable){
+		isClickable = false;
+		$('#onp-cell').width('100%');
+		$('#onpuser-cell').width('0');
+		$('#ebid-cell').width('0');
+		$('#carpool-cell').width('0');
+		$('#onpuserp').width('0');
+		$('#ebidp').width('0');
+		$('#carpoolp').width('0');
+		$('#onpuserp').animate({opacity: 0}, 500);
+		$('#ebidp').animate({opacity: 0}, 500);
+		$('#carpoolp').animate({opacity: 0}, 500);
+		$('#onpuser').width('0');
+		$('#ebid').width('0');
+		$('#carpool').width('0');
+		document.getElementById('onp').style.backgroundImage = 'url("./imgs/g1.jpg")'
+		document.getElementById('onpuser').style.backgroundImage = 'url("./imgs/g2.jpg")'
+		document.getElementById('ebid').style.backgroundImage = 'url("./imgs/g3.jpg")'
+		document.getElementById('carpool').style.backgroundImage = 'url("./imgs/g4.jpg")'
+		setTimeout(function(){
+			isClickable = true;
+		}, 1000);
+	}
+	else if(e.id === 'onpuser-cell' && isClickable){
+		isClickable = false;
+		$('#onpuser-cell').width('100%');
+		$('#onp-cell').width('0');
+		$('#ebid-cell').width('0');
+		$('#carpool-cell').width('0');
+		$('#onpp').width('0');
+		$('#ebidp').width('0');
+		$('#carpoolp').width('0');
+		$('#onpp').animate({opacity: 0}, 500);
+		$('#ebidp').animate({opacity: 0}, 500);
+		$('#carpoolp').animate({opacity: 0}, 500);
+		$('#onp').width('0');
+		$('#ebid').width('0');
+		$('#carpool').width('0');
+		document.getElementById('onp').style.backgroundImage = 'url("./imgs/g1.jpg")'
+		document.getElementById('onpuser').style.backgroundImage = 'url("./imgs/g2.jpg")'
+		document.getElementById('ebid').style.backgroundImage = 'url("./imgs/g3.jpg")'
+		document.getElementById('carpool').style.backgroundImage = 'url("./imgs/g4.jpg")'
+		setTimeout(function(){
+			isClickable = true;
+		}, 1000);
+	}
+	else if(e.id === 'ebid-cell' && isClickable){
+		isClickable = false;
+		$('#ebid-cell').width('100%');
+		$('#onpuser-cell').width('0');
+		$('#onp-cell').width('0');
+		$('#carpool-cell').width('0');
+		$('#onpuserp').width('0');
+		$('#onpp').width('0');
+		$('#carpoolp').width('0');
+		$('#onpuserp').animate({opacity: 0}, 500);
+		$('#onpp').animate({opacity: 0}, 500);
+		$('#carpoolp').animate({opacity: 0}, 500);
+		$('#onpuser').width('0');
+		$('#onp').width('0');
+		$('#carpool').width('0');
+		document.getElementById('onp').style.backgroundImage = 'url("./imgs/g1.jpg")'
+		document.getElementById('onpuser').style.backgroundImage = 'url("./imgs/g2.jpg")'
+		document.getElementById('ebid').style.backgroundImage = 'url("./imgs/g3.jpg")'
+		document.getElementById('carpool').style.backgroundImage = 'url("./imgs/g4.jpg")'
+		setTimeout(function(){
+			isClickable = true;
+		}, 1000);
+	}
+	else if (isClickable){
+		isClickable = false;
+		$('#carpool-cell').width('100%');
+		$('#onpuser-cell').width('0');
+		$('#onp-cell').width('0');
+		$('#ebid-cell').width('0');
+		$('#onpuserp').width('0');
+		$('#onpp').width('0');
+		$('#ebidp').width('0');
+		$('#onpuserp').animate({opacity: 0}, 500);
+		$('#onpp').animate({opacity: 0}, 500);
+		$('#ebidp').animate({opacity: 0}, 500);
+		$('#onpuser').width('0');
+		$('#onp').width('0');
+		$('#ebid').width('0');
+		document.getElementById('onp').style.backgroundImage = 'url("./imgs/g1.jpg")'
+		document.getElementById('onpuser').style.backgroundImage = 'url("./imgs/g2.jpg")'
+		document.getElementById('ebid').style.backgroundImage = 'url("./imgs/g3.jpg")'
+		document.getElementById('carpool').style.backgroundImage = 'url("./imgs/g4.jpg")'
+		setTimeout(function(){
+			isClickable = true;
+		}, 1000);
+	}
 }
 
 $(document).ready(function(){

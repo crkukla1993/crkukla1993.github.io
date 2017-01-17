@@ -7,14 +7,6 @@ body{
 	background: #f5f5f5;
 }
 
-table{
-	width: 100%;
-	z-index: 3;
-	top: 0;
-	left: 0;
-	position: absolute;
-}
-
 td{
 	
 }
@@ -28,7 +20,153 @@ td{
 }
 
 #portfolio{
-	
+	width: 100%;
+}
+
+#portfolio table{
+	width: 100%;
+}
+
+#portfolio table td{
+	width: 25%;
+	color: white;
+	font-weight: bold;
+	font-size: 1em;
+	-webkit-transition:  all 1s;
+    -moz-transition:  all 1s;
+    -o-transition:  all 1s;
+    transition:  all 1s;
+}
+
+#onp{
+	height: 500px;
+	width: 100%;
+	background-image: url("../imgs/onp.jpg");
+	animation: slide1 30s linear infinite;
+	-webkit-transition:  all 1s;
+    -moz-transition:  all 1s;
+    -o-transition:  all 1s;
+    transition:  all 1s;
+}
+
+#onpuser{
+	height: 500px;
+	width: 100%;
+	background-image: url("../imgs/onpuser.jpg");
+	animation: slide2 30s linear infinite;
+	-webkit-transition:  all 1s;
+    -moz-transition:  all 1s;
+    -o-transition:  all 1s;
+    transition:  all 1s;
+}
+
+#ebid{
+	height: 500px;
+	width: 100%;
+	background-image: url("../imgs/ebid.jpg");
+	animation: slide3 30s linear infinite;
+	-webkit-transition:  all 1s;
+    -moz-transition:  all 1s;
+    -o-transition:  all 1s;
+    transition:  all 1s;
+}
+
+#carpool{
+	height: 500px;
+	width: 100%;
+	background-image: url("../imgs/carpool.jpg");
+	animation: slide4 30s linear infinite;
+	-webkit-transition:  all 1s;
+    -moz-transition:  all 1s;
+    -o-transition:  all 1s;
+    transition:  all 1s;
+}
+
+#onp:hover{
+	cursor: pointer;
+	background: url("../imgs/g1.jpg");
+	transition: background 0.5s ease;
+}
+
+#onpuser:hover{
+	cursor: pointer;
+	background: url("../imgs/g2.jpg");
+	transition: background 0.5s ease;
+}
+
+#ebid:hover{
+	cursor: pointer;
+	background: url("../imgs/g3.jpg");
+	transition: background 0.5s ease;
+}
+
+#carpool:hover{
+	cursor: pointer;
+	background: url("../imgs/g4.jpg");
+	transition: background 0.5s ease;
+}
+
+#portfolio table td p{
+	padding: 0;
+}
+@keyframes slide1{
+	0%{
+		background-position: 0% 0%;
+	}
+	33%{
+		background-position: 85% 12%;
+	}
+	67%{
+		background-position: 25% 66%;
+	}
+	100%{
+		background-position: 0% 0%;
+	}
+}
+
+@keyframes slide2{
+	0%{
+		background-position: 85% 12%;
+	}
+	33%{
+		background-position: 25% 66%;
+	}
+	67%{
+		background-position: 0% 0%;
+	}
+	100%{
+		background-position: 82% 12%;
+	}
+}
+
+@keyframes slide3{
+	0%{
+		background-position: 25% 66%;
+	}
+	33%{
+		background-position: 0% 0%;
+	}
+	67%{
+		background-position: 85% 12%;
+	}
+	100%{
+		background-position: 25% 66%;
+	}
+}
+
+@keyframes slide4{
+	0%{
+		background-position: 0% 0%;
+	}
+	33%{
+		background-position: 85% 12%;
+	}
+	67%{
+		background-position: 25% 66%;
+	}
+	100%{
+		background-position: 0% 0%;
+	}
 }
 
 #skills{
@@ -37,8 +175,7 @@ td{
 
 #aboutmetitle{
 	width: 100%;
-	padding-top: 0;
-	padding-bottom: 20px;
+	padding-bottom: 25px;
 	background: #607D8B;
 	float: left;
 }
@@ -70,6 +207,7 @@ td{
 	background: #f5f5f5;
 	clear: both;
 	float: left;
+	margin-bottom: 25px;
 	padding-bottom: 25px;
 }
 
@@ -89,15 +227,15 @@ td{
 #portfoliotitle{
 	width: 100%;
 	padding-top: 20px;
-	padding-bottom: 20px;
-	background: darkblue;
-	clear: both;
+	background: #546E7A;
+	clear: none;
 }
 
 #portfoliotitle h1{
 	color: #f5f5f5;
 	font-size: 2em;
 	padding-left: 25px;
+	margin-top: 0;
 }
 	
 	
@@ -105,7 +243,7 @@ td{
 	width: 100%;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	background: darkred;
+	background: #455A64;
 	float: left;
 	clear: both;
 }
@@ -175,6 +313,14 @@ td{
 	filter: blur(4px);
 }
 
+.header-div table{
+	z-index: 3;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 .header-title{
 	z-index: 1;
 	font-family: Consolas;
@@ -192,7 +338,7 @@ td{
 	text-align: center;
 }
 
-@media (min-width: 1050px) {
+@media only screen and (min-width: 1050px) {
 	#aboutmetitle h1{
 		font-size: 2.5em;
 	}
@@ -204,26 +350,41 @@ td{
 	#aboutmetitle h3{
 		font-size: 1.25em;
 	}
-
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
 
 	#aboutmetitle h3{
 		font-size: 1em;
 	}
+	#portfolio table td{
+		font-size: 2em;
+	}
+	
 }
-@media (max-width: 800px) {
+@media only screen and (max-width: 800px) {
 	#aboutmetitle h2{
 		font-size: 2em;
 	}
-}
-@media (max-width: 500px) {
-	#aboutmetitle h2{
+	
+	#portfolio table td{
 		font-size: 1.5em;
 	}
 }
-@media (min-width: 800px) {
+@media only screen and (max-width: 500px) {
+	#aboutmetitle h2{
+		font-size: 1.5em;
+	}
+	
+}
+
+@media only screen and (max-width: 650px) {
+	#portfolio table td{
+		font-size: 1em;
+	}	
+}
+
+@media only screen and (min-width: 800px) {
     .header-title{
 		font-size: 3.5em;
 	}
@@ -254,12 +415,32 @@ td{
 		width: 60%;
 		clear: none;
 		float: right;
+		margin-bottom: 0;
+	}
+	
+	#portfoliotitle h1{
+		
+	}
+	
+	#portfolio table td{
+		font-size: 2em;
 	}
 	
 	#portfoliotitle{
 		clear: both;
 		float: right;
 	}
+}
+
+#closeportfolio{
+	z-index: 10;
+	transition: opacity 0.3s ease;
+	opacity: 0.5;
+}
+
+#closeportfolio:hover{
+	transition: opacity 0.3s ease;
+	opacity: 1;
 }
 
 .header-btn{
@@ -286,7 +467,10 @@ td{
 }
 
 .header-btn:hover{
+	cursor: pointer;
 	transition: background-color 0.5s ease;
 	background-color: #607D8B;
 }
+
+
 

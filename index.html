@@ -78,15 +78,32 @@
 			</div>
 			<div id="portfolio">
 				<div id="portfoliotitle">
-					<h1>
-						public class Portfolio<br />{
-					</h1>
-					<div style="text-align: center; height: 500px;">
-						<p style="color: white;">This is the portfolio of my works.</p>
-					</div>
-					<h1>
-						}
-					</h1>
+					<h1>Portfolio:</h1>
+					<input id="closeportfolio" type="image" src="imgs/x.png" onclick="closePortfolio(this)" style="display: none; position: absolute; right: 0;" />
+					<table>
+						<tr>
+							<td id="onp-cell" onclick="workClicked(this)">
+								<div id="onp">
+									<p id="onpp" style="position:absolute; padding: 10px;">Overnight<br/>Parking<br/>Police<br/>System</p>
+								</div>
+							</td>
+							<td id="onpuser-cell" onclick="workClicked(this)">
+								<div id="onpuser">
+									<p id="onpuserp" style="position:absolute; padding: 10px;">Overnight<br/>Parking<br/>User<br/>Form</p>
+								</div>
+							</td>
+							<td id="ebid-cell" onclick="workClicked(this)">
+								<div id="ebid">
+									<p id="ebidp" style="position:absolute; padding: 10px;">Online<br/>Job<br/>Bidding<br/>Module</p>
+								</div>
+							</td>
+							<td id="carpool-cell" onclick="workClicked(this)">
+								<div id="carpool">
+									<p id="carpoolp" style="position:absolute; padding: 10px;">Carpool<br/>Android<br/>App</p>
+								</div>
+							</td>
+						</tr>
+					</table>
 				</div>
 			</div>
 			<div id="skills">
