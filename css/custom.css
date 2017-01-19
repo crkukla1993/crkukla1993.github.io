@@ -230,6 +230,7 @@ td{
 	padding-top: 20px;
 	background: #546E7A;
 	clear: none;
+	float: left;
 }
 
 #portfoliotitle h1{
