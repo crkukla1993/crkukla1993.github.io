@@ -250,7 +250,9 @@ function closePortfolio(e){
 }
 
 function workClicked(e){
-	document.getElementById('closeportfolio').style.display = 'block';
+	setTimeout(function(){
+		document.getElementById('closeportfolio').style.display = 'block';
+	}, 2500);
 	if(e.id === 'onp-cell' && isClickable){
 		isClickable = false;
 		document.getElementById('onp').style.backgroundImage = 'url("./imgs/g1.jpg")'

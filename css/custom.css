@@ -435,7 +435,7 @@ td{
 
 #closeportfolio{
 	z-index: 10;
-	transition: opacity 0.3s ease;
+	transition: all 0.3s;
 	opacity: 0.5;
 }
 
