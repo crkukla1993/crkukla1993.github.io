@@ -23,11 +23,12 @@ td{
 	width: 100%;
 }
 
-#portfolio table{
+#portfoliotable{
 	width: 100%;
 }
 
-#portfolio table td{
+
+#portfoliotable td{
 	width: 25%;
 	color: white;
 	font-weight: bold;
@@ -39,10 +40,10 @@ td{
 }
 
 #onp{
-	height: 500px;
+	height: 100%;
 	width: 100%;
 	background-image: url("../imgs/onp.jpg");
-	animation: slide1 30s linear infinite;
+	animation: slide1 90s linear infinite;
 	-webkit-transition:  all 1s;
     -moz-transition:  all 1s;
     -o-transition:  all 1s;
@@ -50,10 +51,10 @@ td{
 }
 
 #onpuser{
-	height: 500px;
+	height: 100%;
 	width: 100%;
 	background-image: url("../imgs/onpuser.jpg");
-	animation: slide2 30s linear infinite;
+	animation: slide2 90s linear infinite;
 	-webkit-transition:  all 1s;
     -moz-transition:  all 1s;
     -o-transition:  all 1s;
@@ -61,10 +62,10 @@ td{
 }
 
 #ebid{
-	height: 500px;
+	height: 100%;
 	width: 100%;
 	background-image: url("../imgs/ebid.jpg");
-	animation: slide3 30s linear infinite;
+	animation: slide3 90s linear infinite;
 	-webkit-transition:  all 1s;
     -moz-transition:  all 1s;
     -o-transition:  all 1s;
@@ -72,10 +73,10 @@ td{
 }
 
 #carpool{
-	height: 500px;
+	height: 100%;
 	width: 100%;
 	background-image: url("../imgs/carpool.jpg");
-	animation: slide4 30s linear infinite;
+	animation: slide4 90s linear infinite;
 	-webkit-transition:  all 1s;
     -moz-transition:  all 1s;
     -o-transition:  all 1s;
