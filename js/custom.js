@@ -234,10 +234,10 @@ function closePortfolio(e){
 			$('#ebidp').animate({opacity: 1}, 500);
 			$('#carpoolp').animate({opacity: 1}, 500);
 			document.getElementById('closeportfolio').style.display = 'none';
-			document.getElementById('onp').style.backgroundImage = 'url("./imgs/onp.jpg")'
-			document.getElementById('onpuser').style.backgroundImage = 'url("./imgs/onpuser.jpg")'
-			document.getElementById('ebid').style.backgroundImage = 'url("./imgs/ebid.jpg")'
-			document.getElementById('carpool').style.backgroundImage = 'url("./imgs/carpool.jpg")'
+			$('#onp').removeClass('onpClicked');
+			$('#onpuser').removeClass('onpuserClicked');
+			$('#ebid').removeClass('ebidClicked');
+			$('#carpool').removeClass('carpoolClicked');
 			setTimeout(function(){
 				isClickable = true;
 			}, 500);
@@ -251,10 +251,10 @@ function workClicked(e){
 	}, 2500);
 	if(e.id === 'onp-cell' && isClickable){
 		isClickable = false;
-		document.getElementById('onp').style.backgroundImage = 'url("./imgs/g1.jpg")'
-		document.getElementById('onpuser').style.backgroundImage = 'url("./imgs/g2.jpg")'
-		document.getElementById('ebid').style.backgroundImage = 'url("./imgs/g3.jpg")'
-		document.getElementById('carpool').style.backgroundImage = 'url("./imgs/g4.jpg")'
+		$('#onp').addClass('onpClicked');
+		$('#onpuser').addClass('onpuserClicked');
+		$('#ebid').addClass('ebidClicked');
+		$('#carpool').addClass('carpoolClicked');
 		setTimeout(function(){
 			$('#onp-cell').width('100%');
 			var h = $('#onp-cell').height();
@@ -292,10 +292,10 @@ function workClicked(e){
 	}
 	else if(e.id === 'onpuser-cell' && isClickable){
 		isClickable = false;
-		document.getElementById('onp').style.backgroundImage = 'url("./imgs/g1.jpg")'
-		document.getElementById('onpuser').style.backgroundImage = 'url("./imgs/g2.jpg")'
-		document.getElementById('ebid').style.backgroundImage = 'url("./imgs/g3.jpg")'
-		document.getElementById('carpool').style.backgroundImage = 'url("./imgs/g4.jpg")'
+		$('#onp').addClass('onpClicked');
+		$('#onpuser').addClass('onpuserClicked');
+		$('#ebid').addClass('ebidClicked');
+		$('#carpool').addClass('carpoolClicked');
 		setTimeout(function(){
 			$('#onpuser-cell').width('100%');
 			var h = $('#onpuser-cell').height();
@@ -333,10 +333,10 @@ function workClicked(e){
 	}
 	else if(e.id === 'ebid-cell' && isClickable){
 		isClickable = false;
-		document.getElementById('onp').style.backgroundImage = 'url("./imgs/g1.jpg")'
-		document.getElementById('onpuser').style.backgroundImage = 'url("./imgs/g2.jpg")'
-		document.getElementById('ebid').style.backgroundImage = 'url("./imgs/g3.jpg")'
-		document.getElementById('carpool').style.backgroundImage = 'url("./imgs/g4.jpg")'
+		$('#onp').addClass('onpClicked');
+		$('#onpuser').addClass('onpuserClicked');
+		$('#ebid').addClass('ebidClicked');
+		$('#carpool').addClass('carpoolClicked');
 		setTimeout(function(){
 			$('#ebid-cell').width('100%');
 			var h = $('#ebid-cell').height();
@@ -374,10 +374,10 @@ function workClicked(e){
 	}
 	else if (isClickable){
 		isClickable = false;
-		document.getElementById('onp').style.backgroundImage = 'url("./imgs/g1.jpg")'
-		document.getElementById('onpuser').style.backgroundImage = 'url("./imgs/g2.jpg")'
-		document.getElementById('ebid').style.backgroundImage = 'url("./imgs/g3.jpg")'
-		document.getElementById('carpool').style.backgroundImage = 'url("./imgs/g4.jpg")'
+		$('#onp').addClass('onpClicked');
+		$('#onpuser').addClass('onpuserClicked');
+		$('#ebid').addClass('ebidClicked');
+		$('#carpool').addClass('carpoolClicked');
 		setTimeout(function(){
 			$('#carpool-cell').width('100%');
 			var h = $('#carpool-cell').height();
@@ -484,9 +484,7 @@ $(document).ready(function(){
 	aboutMeCardPositions();
 	portfolioCardPostions();
 	skillsCardPostions();
-	if(window.innerWidth < 800){
-		
-	}
+
 });
 
 $(window).resize(function(){
