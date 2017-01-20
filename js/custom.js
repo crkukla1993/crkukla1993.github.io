@@ -7,6 +7,8 @@ var preG3 = new Image();
 preG3.src = './imgs/g3.jpg';
 var preG4 = new Image();
 preG4.src = './imgs/g4.jpg';
+var workSelected = false;
+
 function aboutMeCardPositions(){
 	if(!isMobileWidth()){
 		var amh = $('#aboutmetitle').height();
@@ -140,14 +142,16 @@ function isMobileWidth(){
 	var car = document.getElementById('carpool-cell');
 	var count = (tablehtml.match(/<tr>/g) || []).length;
 	if(window.innerWidth < 800){
-		$('#onp-cell').width('50%');
-		$('#onp-cell').height('50%');
-		$('#onpuser-cell').width('50%');
-		$('#onpuser-cell').height('50%');
-		$('#ebid-cell').width('50%');
-		$('#ebid-cell').height('50%');
-		$('#carpool-cell').width('50%');
-		$('#carpool-cell').height('50%');
+		if(!workSelected){
+			$('#onp-cell').width('50%');
+			$('#onp-cell').height('50%');
+			$('#onpuser-cell').width('50%');
+			$('#onpuser-cell').height('50%');
+			$('#ebid-cell').width('50%');
+			$('#ebid-cell').height('50%');
+			$('#carpool-cell').width('50%');
+			$('#carpool-cell').height('50%');
+		}
 		var da = document.getElementById('downarrow');
 		if(count < 2){
 			var index = tablehtml.indexOf('<td id="ebid-cell"');
@@ -188,6 +192,7 @@ function displayContent(){
 
 function closePortfolio(e){
 	if(isClickable){
+		workSelected = false;
 		var widPerc = '25%';
 		var heightPX = '600px';
 		if(window.innerWidth < 800){
@@ -249,6 +254,7 @@ function closePortfolio(e){
 }
 
 function workClicked(e){
+	workSelected = true;
 	setTimeout(function(){
 		document.getElementById('closeportfolio').style.display = 'block';
 	}, 2500);
@@ -498,7 +504,6 @@ $(window).resize(function(){
 	var stxt = $('#skillstext');
 	var h = $(window).height();
 	var w = $(window).width();
-	isMobileWidth();
 	amt.height('auto');
 	amtxt.height('auto');
 	pt.height('auto');
@@ -519,6 +524,7 @@ $(window).resize(function(){
 	aboutMeCardPositions();
 	portfolioCardPostions();
 	skillsCardPostions();
+	isMobileWidth();
 	return false;
 });
 	
