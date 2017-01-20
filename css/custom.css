@@ -31,10 +31,14 @@ td{
 
 
 #portfoliotable td{
+	position: relative;
 	width: 25%;
 	color: white;
 	font-weight: bold;
 	font-size: 1em;
+	z-index: 47;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	padding: 0;
 	-webkit-transition:  all 1s;
     -moz-transition:  all 1s;
     -o-transition:  all 1s;
@@ -46,10 +50,10 @@ td{
 	width: 100%;
 	background-image: url("../imgs/onp.jpg");
 	animation: slide1 90s linear infinite;
-	-webkit-transition:  all 1s;
-    -moz-transition:  all 1s;
-    -o-transition:  all 1s;
-    transition:  all 1s;
+	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #onpuser{
@@ -57,10 +61,10 @@ td{
 	width: 100%;
 	background-image: url("../imgs/onpuser.jpg");
 	animation: slide2 90s linear infinite;
-	-webkit-transition:  all 1s;
-    -moz-transition:  all 1s;
-    -o-transition:  all 1s;
-    transition:  all 1s;
+	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #ebid{
@@ -68,10 +72,10 @@ td{
 	width: 100%;
 	background-image: url("../imgs/ebid.jpg");
 	animation: slide3 90s linear infinite;
-	-webkit-transition:  all 1s;
-    -moz-transition:  all 1s;
-    -o-transition:  all 1s;
-    transition:  all 1s;
+	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #carpool{
@@ -79,61 +83,76 @@ td{
 	width: 100%;
 	background-image: url("../imgs/carpool.jpg");
 	animation: slide4 90s linear infinite;
-	-webkit-transition:  all 1s;
-    -moz-transition:  all 1s;
-    -o-transition:  all 1s;
-    transition:  all 1s;
+	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .onpClicked{
 	cursor: default!important;
 	background-image: url("../imgs/g1.jpg")!important;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)!important;
 }
 
 .onpuserClicked{
 	cursor: default!important;
 	background-image: url("../imgs/g2.jpg")!important;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)!important;
 }
 
 .ebidClicked{
 	cursor: default!important;
 	background-image: url("../imgs/g3.jpg")!important;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)!important;
 }
 
 .carpoolClicked{
 	cursor: default!important;
 	background-image: url("../imgs/g4.jpg")!important;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)!important;
 }
 
 #onp:hover{
 	cursor: pointer;
 	background: url("../imgs/g1.jpg");
-	transition: background 0.3s ease;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #onpuser:hover{
 	cursor: pointer;
 	background: url("../imgs/g2.jpg");
-	transition: background 0.3s ease;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #ebid:hover{
 	cursor: pointer;
 	background: url("../imgs/g3.jpg");
-	transition: background 0.3s ease;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #carpool:hover{
 	cursor: pointer;
 	background: url("../imgs/g4.jpg");
-	transition: background 0.3s ease;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-#portfolio table td{
-	z-index: 47;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	padding: 0;
-}
 @keyframes slide1{
 	0%{
 		background-position: 0% 0%;
@@ -241,7 +260,6 @@ td{
 	background: #f5f5f5;
 	clear: both;
 	float: left;
-	margin-bottom: 25px;
 	padding-bottom: 25px;
 }
 
@@ -265,7 +283,7 @@ td{
 	width: 100%;
 	padding-top: 20px;
 	background: #546E7A;
-	clear: none;
+	clear: both;
 	float: left;
 }
 
@@ -456,7 +474,9 @@ td{
 .img-title{
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
 	position:absolute;
-	margin-top: 15%;
+	top: 10px;
+	left: 25px;
+	width: 25%;
 }
 
 #skills-table span{
