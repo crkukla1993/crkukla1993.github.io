@@ -212,10 +212,10 @@ function closePortfolio(e){
 		$('#onpuser-cell').height(heightPX);
 		$('#ebid-cell').height(heightPX);
 		$('#carpool-cell').height(heightPX);
-		$('#onpp').width('100%');
-		$('#onpuserp').width('100%');
-		$('#ebidp').width('100%');
-		$('#carpoolp').width('100%');
+		$('#onpp').width('25%');
+		$('#onpuserp').width('25%');
+		$('#ebidp').width('25%');
+		$('#carpoolp').width('25%');
 		setTimeout(function(){
 			$('#onp-cell').width(widPerc);
 		}, 250);
