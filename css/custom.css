@@ -4,7 +4,7 @@ body{
 	overflow-y: scroll;
 	margin: 0;
 	overflow-x: hidden;
-	background: #f5f5f5;
+	background: #1e1e1e;
 }
 
 td{
@@ -25,6 +25,7 @@ td{
 
 #portfoliotable{
 	width: 100%;
+	padding-bottom: 25px;
 }
 
 
@@ -175,6 +176,7 @@ td{
 }
 
 #aboutmetitle{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 100%;
 	padding-bottom: 25px;
 	background: #607D8B;
@@ -226,6 +228,7 @@ td{
 }
 
 #portfoliotitle{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 100%;
 	padding-top: 20px;
 	background: #546E7A;
@@ -242,25 +245,35 @@ td{
 	
 	
 #skillstitle{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 100%;
 	padding-top: 20px;
-	padding-bottom: 20px;
 	background: #455A64;
 	float: left;
 	clear: both;
 }
 
+#skillstitle p{
+	color: white;
+	font-size: 1.25em;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
 #skillstitle h1{
 	color: #f5f5f5;
-	font-size: 1.5em;
+	font-size: 2em;
+	padding-left: 25px;
+	margin-top: 0;
 }
 
 #skillstext{
 	width: 100%;
+	padding-bottom: 20px;
+
 	background: #f5f5f5;
 	clear: both;
 	float: left;
-	padding-bottom: 25px;
 }
 
 #skillstext h3{
@@ -268,11 +281,12 @@ td{
 	padding-left: 50px;
 }
 
-#skillstext p{
+
+#skillstext table{
 	color: black;
-	font-size: 1.2em;
+	font-size: 1.15em;
 	padding-left: 50px;
-	padding-right: 50px;
+	padding-right: 25px;
 }
 
 .s1{
@@ -340,8 +354,71 @@ td{
 	text-align: center;
 }
 
-@media only screen and (min-width: 1050px) {
+#closeportfolio{
+	z-index: 10;
+	transition: all 0.3s;
+	opacity: 0.5;
+}
+
+#closeportfolio:hover{
+	transition: opacity 0.3s ease;
+	opacity: 1;
+}
+
+#skills-table{
+	padding-bottom:25px;
+}
+
+.header-btn{
+	display: inline-block;
+	z-index: 5;
+	margin: 1em;
+	transition: background-color 0.3s ease;
+	font-family: Consolas;
+	font-weight: 400;
+	color: #f5f5f5;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-right: 20px;
+	padding-bottom:15px;
+	background-color: transparent;
+	border: 5px solid #f5f5f5;
+	min-width: 8em;
+}
+
+.navbar-custom{
+	z-index: 4;
+	margin-top: -5%;
+	display:none;
+}
+
+.header-btn:hover{
+	cursor: pointer;
+	transition: background-color 0.5s ease;
+	background-color: #607D8B;
+}
+
+.pl-div{
+	font-size: 0.7em;
+	min-width: 65px;
+	font-weight: bold;
+	border-radius: 2px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	padding: 5px;
+	color: #f5f5f5;
+}
+
+@media screen and (min-width: 1050px) {
 	#aboutmetitle h1{
+		font-size: 2.5em;
+	}
+		
+	#portfoliotitle h1{
+		font-size: 2.5em;
+	}
+	
+	#skillstitle h1{
 		font-size: 2.5em;
 	}
 	
@@ -352,19 +429,24 @@ td{
 	#aboutmetitle h3{
 		font-size: 1.25em;
 	}
+	
+	.pl-div{
+		font-size: 1em;
+	}
 }
 
-@media only screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
 
 	#aboutmetitle h3{
 		font-size: 1em;
 	}
+	
 	#portfolio table td{
 		font-size: 2em;
 	}
 	
 }
-@media only screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
 	#aboutmetitle h2{
 		font-size: 2em;
 	}
@@ -373,20 +455,20 @@ td{
 		font-size: 1.5em;
 	}
 }
-@media only screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
 	#aboutmetitle h2{
 		font-size: 1.5em;
 	}
 	
 }
 
-@media only screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
 	#portfolio table td{
 		font-size: 1em;
 	}	
 }
 
-@media only screen and (min-width: 800px) {
+@media screen and (min-width: 800px) {
     .header-title{
 		font-size: 3.5em;
 	}
@@ -433,46 +515,5 @@ td{
 		float: right;
 	}
 }
-
-#closeportfolio{
-	z-index: 10;
-	transition: all 0.3s;
-	opacity: 0.5;
-}
-
-#closeportfolio:hover{
-	transition: opacity 0.3s ease;
-	opacity: 1;
-}
-
-.header-btn{
-	display: inline-block;
-	z-index: 5;
-	margin: 1em;
-	transition: background-color 0.3s ease;
-	font-family: Consolas;
-	font-weight: 400;
-	color: #f5f5f5;
-	padding-left: 20px;
-	padding-top: 15px;
-	padding-right: 20px;
-	padding-bottom:15px;
-	background-color: transparent;
-	border: 5px solid #f5f5f5;
-	min-width: 8em;
-}
-
-.navbar-custom{
-	z-index: 4;
-	margin-top: -5%;
-	display:none;
-}
-
-.header-btn:hover{
-	cursor: pointer;
-	transition: background-color 0.5s ease;
-	background-color: #607D8B;
-}
-
 
 

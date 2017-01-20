@@ -102,30 +102,30 @@ function setHeightsEven(){
 	var sth;
 	var stxth;
 	try {
-		amth = window.getComputedStyle(amt, null).getPropertyValue('height');
-		amtxth = window.getComputedStyle(amtxt, null).getPropertyValue('height');
-		sth = window.getComputedStyle(st, null).getPropertyValue('height');
-		stxth = window.getComputedStyle(stxt, null).getPropertyValue('height');
+		amth = parseFloat(window.getComputedStyle(amt, null).getPropertyValue('height').replace('px', ''));
+		amtxth = parseFloat(window.getComputedStyle(amtxt, null).getPropertyValue('height').replace('px', ''));
+		sth = parseFloat(window.getComputedStyle(st, null).getPropertyValue('height').replace('px', ''));
+		stxth = parseFloat(window.getComputedStyle(stxt, null).getPropertyValue('height').replace('px', ''));
 	} catch(e) {
-		amth = amt.currentStyle.height;
-		amtxth = amtxt.currentStyle.height;
-		sth = st.currentStyle.height;
-		stxth = stxt.currentStyle.height;
+		amth = parseFloat(amt.currentStyle.height.replace('px', ''));
+		amtxth = parseFloat(amtxt.currentStyle.height.replace('px', ''));
+		sth = parseFloat(st.currentStyle.height.replace('px', ''));
+		stxth = parseFloat(stxt.currentStyle.height.replace('px', ''));
 	} 
 	
 	if(!isMobileWidth()){		
 		if(amth < amtxth){
-			amt.style.height = amtxth;
+			amt.style.height = amtxth + 'px';
 		}
 		else{
-			amtxt.style.height = amth;
+			amtxt.style.height = amth + 'px';
 		}
 		
 		if(sth < stxth){
-			st.style.height = stxth;
+			st.style.height = stxth + 'px';
 		}
 		else{
-			stxt.style.height = sth;
+			stxt.style.height = sth + 'px';
 		}
 	}
 }
@@ -212,10 +212,6 @@ function closePortfolio(e){
 		$('#onpuser-cell').height(heightPX);
 		$('#ebid-cell').height(heightPX);
 		$('#carpool-cell').height(heightPX);
-		$('#onp').width('100%');
-		$('#onpuser').width('100%');
-		$('#ebid').width('100%');
-		$('#carpool').width('100%');
 		$('#onpp').width('100%');
 		$('#onpuserp').width('100%');
 		$('#ebidp').width('100%');
@@ -281,13 +277,10 @@ function workClicked(e){
 			$('#onpuserp').animate({opacity: 0}, 500);
 			$('#ebidp').animate({opacity: 0}, 500);
 			$('#carpoolp').animate({opacity: 0}, 500);
-			$('#onpuser').width('0');
-			$('#ebid').width('0');
-			$('#carpool').width('0');
 			setTimeout(function(){
 				setTimeout(function(){
 					isClickable = true;
-				}, 750);
+				}, 650);
 				$('#onpuser-cell').hide();
 				$('#carpool-cell').hide();
 				$('#ebid-cell').hide();
@@ -325,13 +318,10 @@ function workClicked(e){
 			$('#onpp').animate({opacity: 0}, 500);
 			$('#ebidp').animate({opacity: 0}, 500);
 			$('#carpoolp').animate({opacity: 0}, 500);
-			$('#onp').width('0');
-			$('#ebid').width('0');
-			$('#carpool').width('0');
 			setTimeout(function(){
 				setTimeout(function(){
 					isClickable = true;
-				}, 750);
+				}, 650);
 				$('#carpool-cell').hide();
 				$('#onp-cell').hide();
 				$('#ebid-cell').hide();
@@ -369,13 +359,10 @@ function workClicked(e){
 			$('#onpuserp').animate({opacity: 0}, 500);
 			$('#onpp').animate({opacity: 0}, 500);
 			$('#carpoolp').animate({opacity: 0}, 500);
-			$('#onpuser').width('0');
-			$('#onp').width('0');
-			$('#carpool').width('0');
 			setTimeout(function(){
 				setTimeout(function(){
 					isClickable = true;
-				}, 750);
+				}, 650);
 				$('#onpuser-cell').hide();
 				$('#onp-cell').hide();
 				$('#carpool-cell').hide();
@@ -413,13 +400,10 @@ function workClicked(e){
 			$('#onpuserp').animate({opacity: 0}, 500);
 			$('#onpp').animate({opacity: 0}, 500);
 			$('#ebidp').animate({opacity: 0}, 500);
-			$('#onpuser').width('0');
-			$('#onp').width('0');
-			$('#ebid').width('0');
 			setTimeout(function(){
 				setTimeout(function(){
 					isClickable = true;
-				}, 750);
+				}, 650);
 				$('#onpuser-cell').hide();
 				$('#onp-cell').hide();
 				$('#ebid-cell').hide();
@@ -459,6 +443,25 @@ $(document).ready(function(){
 			}});
 		}});
 	}});
+	$('skills-table').width($('skillstext').width());
+	var plArr = document.getElementById('skills-table').getElementsByClassName('pl-div');
+	var largest = 0;
+	for(var i = 0; i < plArr.length; i++){
+		if(parseFloat(plArr[i].innerHTML) > largest){
+			largest = parseFloat(plArr[i].innerHTML);
+		}
+	}
+	for(var i = 0; i < plArr.length; i++){
+		if(parseFloat(plArr[i].innerHTML) === 1){
+			plArr[i].innerHTML += " Year";
+		}
+		else{
+			plArr[i].innerHTML += " Years";
+		}
+		plArr[i].style.width = ((parseFloat(plArr[i].innerHTML)/largest)*100) + '%';
+	}
+	
+	
 	if(h < 480){
 		h = 480;
 	}
@@ -481,6 +484,9 @@ $(document).ready(function(){
 	aboutMeCardPositions();
 	portfolioCardPostions();
 	skillsCardPostions();
+	if(window.innerWidth < 800){
+		
+	}
 });
 
 $(window).resize(function(){
