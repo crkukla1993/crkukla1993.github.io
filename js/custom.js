@@ -84,13 +84,37 @@ function skillsCardPostions(){
 		else{
 			$('#skillstitle').css('marginLeft', 0);
 			$('#skillstext').css('marginTop', 0);
+			setTimeout(function(){animateGraphs();}, 250);
 		}
 	}
 	else{
+		animateGraphs();
 		$('#skillstitle').css('marginLeft', 0);
 		$('#skillstext').css('marginTop', 0);
 	}
 	return false;
+}
+
+function animateGraphs(){
+	for(var i = 0; i < plArr.length; i++){
+		plArr[i].style.visibility = 'visible'
+	}
+	for(var i = 0; i < plArr.length; i++){
+		var n = ((parseFloat(plArr[i].children[0].innerHTML)/largest)*100) + '%';
+		plArr[i].style.width = n;
+		plArr[i].children[0].style.visibility = 'visible';
+	}
+	
+	for(var i = 0; i < plArr.length; i++){
+		var p = plArr[i].children[0].innerHTML;
+		plArr[i].children[0].innerHTML = p.replace(' Years', '').replace(' Year', ''); 
+		if(parseFloat(plArr[i].children[0].innerHTML) === 1){
+			plArr[i].children[0].innerHTML += ' Year';
+		}
+		else{
+			plArr[i].children[0].innerHTML += ' Years';
+		}
+	}
 }
 
 function setHeightsEven(){
@@ -452,22 +476,13 @@ $(document).ready(function(){
 			}});
 		}});
 	}});
-	$('skills-table').width($('skillstext').width());
-	var plArr = document.getElementById('skills-table').getElementsByClassName('pl-div');
-	var largest = 0;
+	
+	plArr = document.getElementById('skills-table').getElementsByClassName('pl-div');
+	largest = 0;
 	for(var i = 0; i < plArr.length; i++){
-		if(parseFloat(plArr[i].innerHTML) > largest){
-			largest = parseFloat(plArr[i].innerHTML);
+		if(parseFloat(plArr[i].children[0].innerHTML) > largest){
+			largest = parseFloat(plArr[i].children[0].innerHTML);
 		}
-	}
-	for(var i = 0; i < plArr.length; i++){
-		if(parseFloat(plArr[i].innerHTML) === 1){
-			plArr[i].innerHTML += " Year";
-		}
-		else{
-			plArr[i].innerHTML += " Years";
-		}
-		plArr[i].style.width = ((parseFloat(plArr[i].innerHTML)/largest)*100) + '%';
 	}
 	
 	
@@ -569,6 +584,7 @@ $(window).scroll(function(){
 	aboutMeCardPositions();
 	portfolioCardPostions();
 	skillsCardPostions();
+	
 	if(!isMobileWidth()){
 
 		var t;
