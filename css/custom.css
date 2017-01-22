@@ -7,8 +7,11 @@ body{
 	background: #1e1e1e;
 }
 
-td{
-	
+#downarrow{
+	position: absolute;
+	bottom: 5px;
+	width: 75px;
+	margin-left: -35px;
 }
 
 #content-div{
@@ -26,7 +29,8 @@ td{
 
 #portfoliotable{
 	width: 100%;
-	padding-bottom: 25px;
+	height: 531px;
+	padding-bottom: 1.5em;
 }
 
 
@@ -35,7 +39,6 @@ td{
 	width: 25%;
 	color: white;
 	font-weight: bold;
-	font-size: 1em;
 	z-index: 47;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	padding: 0;
@@ -56,6 +59,15 @@ td{
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+#portfoliotable p{
+	display:none;
+	bottom: 0;
+	margin-left: -1em;
+	padding: 0.375em;
+	left: 1.5em;
+	position:absolute;
+}
+
 #onpuser{
 	height: 100%;
 	width: 100%;
@@ -65,6 +77,10 @@ td{
     -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+#onpuser p{
+	position:absolute;
 }
 
 #ebid{
@@ -78,6 +94,10 @@ td{
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+#ebid p{
+	position:absolute;
+}
+
 #carpool{
 	height: 100%;
 	width: 100%;
@@ -87,6 +107,10 @@ td{
     -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+#carpool p{
+	position:absolute;
 }
 
 .onpClicked{
@@ -222,33 +246,30 @@ td{
 	z-index: 50;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 100%;
-	padding-bottom: 25px;
 	background: #607D8B;
 	float: left;
 }
 
+#aboutmetitle div {
+	padding: 0 1.5em 1.5em 1.5em;
+}
+
 #aboutmetitle h1{
+	margin-bottom: -0.75em;
+	padding-left: 1.5em;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
 	color: #f5f5f5;
-	font-size: 2em;
-	padding-left: 25px;
 }
 
 #aboutmetitle h2{
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
-	padding-left: 25px;
-	padding-right: 25px;
 	color: #f5f5f5;
-	font-size: 1.5em;
 	text-align: center;
 }
 
 #aboutmetitle h3{
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
 	color: #f5f5f5;
-	font-size: 1em;
-	padding-left: 25px;
-	padding-right: 25px;
 	text-align: center;
 }
 
@@ -260,20 +281,14 @@ td{
 	background: #f5f5f5;
 	clear: both;
 	float: left;
-	padding-bottom: 25px;
 }
 
-#aboutmetext h3{
-	padding-top: 25px;
-	padding-left: 50px;
-	
+#aboutmetext div{
+	padding: 1.5em 3em 3em 3em;
 }
 
 #aboutmetext p{
 	color: black;
-	font-size: 1.2em;
-	padding-left: 50px;
-	padding-right: 50px;
 }
 
 #portfoliotitle{
@@ -281,7 +296,7 @@ td{
 	z-index: 35;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 100%;
-	padding-top: 20px;
+	padding-top: 1.25em;
 	background: #546E7A;
 	clear: both;
 	float: left;
@@ -290,8 +305,7 @@ td{
 #portfoliotitle h1{
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
 	color: #f5f5f5;
-	font-size: 2em;
-	padding-left: 25px;
+	padding-left: 1.5em;
 	margin-top: 0;
 }
 	
@@ -301,25 +315,26 @@ td{
 	z-index: 25;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 100%;
-	padding-top: 20px;
 	background: #455A64;
 	float: left;
 	clear: both;
+	padding-top: 1.25em;
+	min-height: 500px;
+}
+
+#skillstitle div{
+	padding: 0 1.5em 1.5em 1.5em;
 }
 
 #skillstitle p{
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
 	color: #f5f5f5;
-	font-size: 1.25em;
-	padding-left: 50px;
-	padding-right: 50px;
 }
 
 #skillstitle h1{
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
 	color: #f5f5f5;
-	font-size: 2em;
-	padding-left: 25px;
+	padding-left: 0.75em;
 	margin-top: 0;
 }
 
@@ -327,24 +342,21 @@ td{
 	position: relative;
 	z-index: 20;
 	width: 100%;
-	padding-bottom: 20px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	background: #f5f5f5;
 	clear: both;
 	float: left;
+	padding-bottom: 1.25em;
 }
 
-#skillstext h3{
-	padding-top: 25px;
-	padding-left: 50px;
+#skillstext div{
+	padding: 0.75em 2em 0 2em;
 }
-
 
 #skillstext table{
 	color: black;
 	font-size: 1.15em;
-	padding-left: 50px;
-	padding-right: 25px;
+	padding: 0 1.75em 1.5em 1.75em;
 }
 
 .s1{
@@ -366,7 +378,6 @@ td{
 	font-family: Consolas;
 	font-weight: 400;
 	display: inline-block;
-	font-size: 1.0em;
 	color: #f5f5f5;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
 }
@@ -375,10 +386,10 @@ td{
 	z-index:-999999;
 	top: 0;
 	left: 0;
-	margin-top: -10px;
-	margin-left: -10px;
-	padding-right: 10px;
-	padding-bottom: 10px;
+	margin-top: -0.75em;
+	margin-left: -0.75em;
+	padding-right: 0.75em;
+	padding-bottom: 0.75em;
 	position: absolute;
 	background: url(../imgs/bg.gif);
 	-webkit-filter: blur(4px);
@@ -402,7 +413,6 @@ td{
 	font-weight: 400;
 	margin-top: 13%;
 	margin-bottom: 10px;
-	font-size: 2em;
 	display: none;
 	color: #f5f5f5;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
@@ -427,7 +437,7 @@ td{
 }
 
 #skills-table{
-	padding-bottom:25px;
+	padding-bottom: 1.5em;
 }
 
 .header-btn{
@@ -439,12 +449,9 @@ td{
 	font-weight: 400;
 	color: #f5f5f5;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
-	padding-left: 20px;
-	padding-top: 15px;
-	padding-right: 20px;
-	padding-bottom:15px;
+	padding: 1em 1.25em 1em 1.25em;
 	background-color: transparent;
-	border: 5px solid #f5f5f5;
+	border: 4px solid #f5f5f5;
 	min-width: 8em;
 }
 
@@ -461,14 +468,14 @@ td{
 }
 
 .pl-div{
-	font-size: 0.5em;
 	min-width: 47px;
 	font-weight: bold;
 	border-radius: 2px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
-	padding: 5px;
+	padding: 0.375em!important;
 	color: #f5f5f5;
+	margin-left: 0.75em;
 }
 
 .img-title{
@@ -479,27 +486,258 @@ td{
 	width: 25%;
 }
 
-#skills-table span{
-	font-size: 0.75em;
+.portfolio-cell-mobile{
+	width: 50%;
+	height: 50%;
 }
 
-@media screen and (min-width: 1050px) {
-	#aboutmetitle h1{
-		font-size: 2.5em;
+.downarrow-mobile{
+	width: 50px!important;
+	margin-left: -20px!important;
+}
+
+@media screen and (max-width: 499px) {
+	h1{
+		font-size: 1.5em;
 	}
-		
-	#portfoliotitle h1{
+	
+	#aboutmetitle h2{
+		font-size: 1.25em;
+	}
+	
+	#aboutmetitle h3{
+		font-size: 0.8em;
+	}
+	
+	#aboutmetext h3{
+		font-size: 1.1em;
+	}
+	
+	#skillstext h3{
+		font-size: 1.1em;
+	}
+	
+	p{
+		font-size: 0.875em;
+	}
+	
+	#skills-table span{
+		font-size: 0.875em;
+	}
+	
+	.secondary-title{
+		font-size: 0.75em;
+	}
+	
+	.header-btn{
+		font-size: 0.75em;
+		padding: 0.75em 1em 0.75em 1em;
+		border: 3px solid #f5f5f5;
+		display: block;
+		width: 100%;
+		margin: -3px 0 0 0;
+	}
+	
+	.img-title{
+		font-size: 1.25em;
+	}
+	
+	.pl-div{
+		font-size: 0.5em;
+	}
+	
+}
+
+@media screen and (min-width: 500px) and (max-width: 767px) {
+	h1{
+		font-size: 2.25em;
+	}
+	
+	#aboutmetitle h2{
+		font-size: 2.25em;
+	}
+	
+	#aboutmetitle h3{
+		font-size: 1.25em;
+	}
+	
+	#aboutmetext h3{
+		font-size: 1.3em;
+	}
+	
+	#skillstext h3{
+		font-size: 1.3em;
+	}
+	
+	p{
+		font-size: 1.15em;
+	}
+	
+	#skills-table span{
+		font-size: 1em;
+	}
+	
+	.header-btn{
+		font-size: 0.85em;
+		display: block;
+		width: 100%;
+		margin: -4px 0 0 0;
+	}
+
+	.secondary-title{
+		font-size: 1em;
+	}
+	
+	.img-title{
+		font-size: 1.5em;
+	}
+	
+	.pl-div{
+		font-size: 0.6em;
+	}
+}
+
+@media screen and (min-width: 768px){
+	#skillstitle{
+		width: 35%;
+	}
+	
+	#skillstext{
+		width: 65%;
+		clear: none;
+		float: right;
+	}
+	
+	#aboutmetitle{
+		width: 35%;
+	}
+	
+	#aboutmetext{
+		width: 65%;
+		clear: none;
+		float: right;
+		margin-bottom: 0;
+	}
+	
+	#portfoliotitle{
+		clear: none;
+		float: right;
+	}
+	
+	.img-title{
+		font-size: 1.75em;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width:1023px) {
+	h1{
+		font-size: 2em;
+	}
+	
+	#aboutmetext h3{
+		font-size: 1.25em;
+	}
+	
+	#skillstext h3{
+		font-size: 1.25em;
+	}
+	
+	#aboutmetitle h2{
+		font-size: 1.4em;
+	}
+	
+	#aboutmetitle h3{
+		font-size: 0.85em;
+	}
+	
+	.header-title{
 		font-size: 2.5em;
 	}
 	
-	#skillstitle h1{
-		font-size: 2.5em;
+	.secondary-title{
+		font-size: 1.25em;
+	}
+	
+	.header-btn{
+		font-size: 1em;
+	}
+	
+	.pl-div{
+		font-size: 0.70em;
+	}
+	
+	p{
+		font-size: 0.875em;
+	}
+	
+	#skills-table span{
+		font-size: 0.875em;
+	}
+}
+
+@media screen and (min-width:1024px) and (max-width:1280px) {
+	h1{
+		font-size: 2.25em;
+	}
+	
+	#aboutmetitle h3{
+		font-size: 1.10em;
+	}
+}
+
+@media screen and (min-width:1024px) {
+	
+	#aboutmetext h3{
+		font-size: 1.5em;
+	}
+	
+	#skillstext h3{
+		font-size: 1.5em;
 	}
 	
 	#aboutmetitle h2{
 		font-size: 2em;
 	}
-		
+	
+	p{
+		font-size: 1.15em;
+	}
+	
+	#skills-table span{
+		font-size: 1em;
+	}
+	
+	.header-title{
+		font-size: 3.5em;
+	}
+	
+	.header-btn{
+		font-size: 1.25em;
+	}
+	
+	.secondary-title{
+		font-size: 1.5em;
+	}
+	
+	.img-title{
+		font-size: 2em;
+	}
+	
+	.pl-div{
+		font-size: 0.85em;
+	}
+}
+
+
+@media screen and (min-width:1280px) {
+	h1{
+		font-size: 2.5em;
+	}
+	
+	#aboutmetitle h2{
+		font-size: 2.25em;
+	}
+	
 	#aboutmetitle h3{
 		font-size: 1.25em;
 	}
@@ -507,91 +745,11 @@ td{
 	.pl-div{
 		font-size: 1em;
 	}
-	
-	#skills-table span{
-	font-size: 1em;
 }
-}
-
-@media screen and (max-width: 900px) {
-
-	#aboutmetitle h3{
-		font-size: 1em;
-	}
 	
-	#portfolio table td{
-		font-size: 2em;
-	}
 	
-}
-@media screen and (max-width: 800px) {
-	#aboutmetitle h2{
-		font-size: 2em;
-	}
 	
-	#portfolio table td{
-		font-size: 1.5em;
-	}
-}
-@media screen and (max-width: 500px) {
-	#aboutmetitle h2{
-		font-size: 1.5em;
-	}
 	
-}
-
-@media screen and (max-width: 650px) {
-	#portfolio table td{
-		font-size: 1em;
-	}	
-}
-
-@media screen and (min-width: 800px) {
-    .header-title{
-		font-size: 3.5em;
-	}
 	
-	.secondary-title{
-		font-size: 1.5em;
-	}
 	
-	.header-btn{
-		font-size: 1.25em;
-	}
-
-	#skillstitle{
-		width: 40%;
-	}
 	
-	#skillstext{
-		width: 60%;
-		clear: none;
-		float: right;
-	}
-	
-	#aboutmetitle{
-		width: 40%;
-	}
-	
-	#aboutmetext{
-		width: 60%;
-		clear: none;
-		float: right;
-		margin-bottom: 0;
-	}
-	
-	#portfoliotitle h1{
-		
-	}
-	
-	#portfolio table td{
-		font-size: 2em;
-	}
-	
-	#portfoliotitle{
-		clear: both;
-		float: right;
-	}
-}
-
-

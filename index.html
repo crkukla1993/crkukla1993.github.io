@@ -11,6 +11,7 @@
 	</head>
 
 	<body>
+		<span id="wh" style="position: absolute; top: 0; color: white;"></span>
 		<div class="header-div">
 			<div class="blur"></div>
 			<table>
@@ -39,41 +40,42 @@
 				</tr>
 			</table>
 			<div style="height: 100%; width: 100%; text-align: center; position: relative;">
-				<img id="downarrow" style="position: absolute; height: auto; bottom: 5px;" src="imgs/chevron-down.png" />
+				<img id="downarrow" src="imgs/chevron-down.png" />
 			</div>
 		</div>
 		<div id="content-div">
 			<div id="aboutme">
 				<div id="aboutmetitle">
 					<h1>About Me:</h1>
-					<h2>Christopher Kukla</h2>
 					<div style="text-align: center;">
-						<img id="profilepic" width="60%" style="border-radius: 50%; border: 10px solid #f5f5f5;" src="imgs/me.jpg"/>
+						<h2>Christopher Kukla</h2>
+						<img id="profilepic" width="70%" style="border-radius: 50%; border: 10px solid #f5f5f5;" src="imgs/me.jpg"/>
+						<h3>Phone: 224-425-1576<br />Email: crkukla1993@gmail.com</h3>
 					</div>
-					<h3>Phone: 224-425-1576<br />Email: crkukla1993@gmail.com</h3>
-
 				</div>
 				<div id="aboutmetext">
-					<h3>//About Me:</h3>
-					<p>
-						My name is Christopher Kukla. I have always like building and creating things; LEGOs were my favorite toy.
-						During high school, I had taken multiple computer aided drafting courses. These courses got me interested in Engineering.
-						I took that interest to Northern Illinois University, enrolling in their Mechanical Engineering program.
-						Over time, I realized that engineering wasn't satisfying my passion to create. So, I left NIU, and went
-						on to study at Illinois State University majoring in Computer Science. 
-					</p>
-					<p>
-						My education has taught me a lot and so has my internship experience. I spent two summers and one
-						winter break working as an intern at the Village of Palatine, Illinois. During my internship I 
-						taught myself C#, ASP.NET, Javascript, and JQuery. I needed these languages to build the systems 
-						that the Village still has in place today.
-					</p>
-					<p>
-						There is more to me than just my education and my experience. I have a passion for development.
-						I enjoy the time I spend programming. I want to create a good user experience. I want my work to show
-						that I love, and care about what I do. The passion I have is what drives me. I hope that my passion 
-						can drive your business.
-					</p>
+					<div>
+						<h3>//About Me:</h3>
+						<p>
+							My name is Christopher Kukla. I have always like building and creating things; LEGOs were my favorite toy.
+							During high school, I had taken multiple computer aided drafting courses. These courses got me interested in Engineering.
+							I took that interest to Northern Illinois University, enrolling in their Mechanical Engineering program.
+							Over time, I realized that engineering wasn't satisfying my passion to create. So, I left NIU, and went
+							on to study at Illinois State University majoring in Computer Science. 
+						</p>
+						<p>
+							My education has taught me a lot and so has my internship experience. I spent two summers and one
+							winter break working as an intern at the Village of Palatine, Illinois. During my internship I 
+							taught myself C#, ASP.NET, Javascript, and JQuery. I needed these languages to build the systems 
+							that the Village still has in place today.
+						</p>
+						<p>
+							There is more to me than just my education and my experience. I have a passion for development.
+							I enjoy the time I spend programming. I want to create a good user experience. I want my work to show
+							that I love, and care about what I do. The passion I have is what drives me. I hope that my passion 
+							can drive your business.
+						</p>
+					</div>
 				</div>
 			</div>
 			<div id="portfolio">
@@ -84,31 +86,47 @@
 						<tr>
 							<td id="onp-cell" onclick="workClicked(this)">
 								<div id="onp">
-									<p id="onpp" class="img-title">
-										Overnight<br/>Parking<br/>Police<br/>System
+									<h4 id="onp-title" class="img-title">Overnight<br/>Parking<br/>Police<br/>System</h4>
+									<p id="onp-desc">
+										Backend: C#<br/>
+										Frontend: ASP.NET, Javascript, JQuery<br/>
+										Database: MySQL<br/>
+										Software Used: Microsoft Visual Studio 2015, Toad
+										Backend, Frontend, CSS/design, and some of the MySQL done by me.
 									</p>
 								</div>
 							</td>
 							<td id="onpuser-cell" onclick="workClicked(this)">
 								<div id="onpuser">
-									<p id="onpuserp" class="img-title">
-										Overnight<br/>Parking<br/>User<br/>Form
+									<h4 id="onpuser-title" class="img-title">Overnight<br/>Parking<br/>User<br/>Form</h4>
+									<p id="onpuser-desc">
+										Backend: C#<br/>
+										Frontend: ASP.NET, Javascript, JQuery<br/>
+										Database: MySQL<br/>
+										All parts including CSS/design done by me.
 									</p>
 								</div>
 							</td>
 							<td id="ebid-cell" onclick="workClicked(this)">
 								<div id="ebid">
-									<p id="ebidp" class="img-title">
-										Online<br/>Job<br/>Bidding<br/>Module
+									<h4 id="ebid-title" class="img-title">Online<br/>Job<br/>Bidding<br/>Module</h4>
+									<p id="ebid-desc">
+										Backend: C#<br/>
+										Frontend: ASP.NET, Javascript, JQuery<br/>
+										Database: MySQL<br/>
+										All parts including CSS/design done by me.
 									</p>
 								</div>
 							</td>
 							<td id="carpool-cell" onclick="workClicked(this)">
 								<div id="carpool">
-									<p id="carpoolp" class="img-title">
-										Carpool<br/>Android<br/>App
+									<h4 id="carpool-title" class="img-title">Carpool<br/>Android<br/>App</h4>
+									<p id="carpool-desc">
+										Backend: C#<br/>
+										Frontend: ASP.NET, Javascript, JQuery<br/>
+										Database: MySQL<br/>
+										All parts including CSS/design done by me.
 									</p>
-									
 								</div>
 							</td>
 						</tr>
@@ -118,7 +136,7 @@
 			<div id="skills">
 				<div id="skillstitle">
 					<h1>Skills:</h1>
-					<div style="height: 500px; padding-bottom: 25px;">
+					<div>
 						<p>
 							I have picked up a number of technical skills from my educational career, 
 							my internship work, and even my personal studies.
@@ -133,47 +151,47 @@
 					</div>
 				</div>
 				<div id="skillstext">
-					<h3>//Skills:</h3>
-					<table id="skills-table" align="left">
+					<div>
+						<h3>//Skills:</h3>
+					</div>
+					<table id="skills-table">
 						<tr>
-							<th colspan="2"><span style="float:left; padding-bottom: 10px;">Programming Languages:</span></th>
+							<th align="left" colspan="2" style="padding-bottom: 10px;"><span>Programming Languages:</span></th>
 						</tr>
 						<tr>
-							<td style="padding-right: 25px;"><span>Java</span></td>
-							<td style="width: 85%">
-							<div class="pl-div" style="background: #F57F17;">2.5</div>
-							</td>
+							<td align="right"><span>Java</span></td>
+							<td style="width: 85%"><div class="pl-div" style="background: #F57F17;">2.5</div></td>
 						</tr>
 						<tr>
-							<td style="padding-right: 25px;"><span>HTML5/CSS</span></td>
+							<td align="right"><span>HTML5/CSS</span></td>
 							<td><div class="pl-div" style="background: #F57F17;">2.5</div></td>
 						</tr>
 						<tr>
-							<td style="padding-right: 25px;"><span>C#</span></td>
+							<td align="right"><span>C#</span></td>
 							<td><div class="pl-div" style="background: #F9A825;">2</div></td>
 						</tr>
 						<tr>
-							<td style="padding-right: 25px;"><span>ASP.NET</span></td>
+							<td align="right"><span>ASP.NET</span></td>
 							<td><div class="pl-div" style="background: #F9A825;">2</div></td>
 						</tr>
 						<tr>
-							<td style="padding-right: 25px;"><span>Javascript</span></td>
+							<td align="right"><span>Javascript</span></td>
 							<td><div class="pl-div" style="background: #F9A825;">2</div></td>
 						</tr>
 						<tr>
-							<td style="padding-right: 25px;"><span>JQuery</span></td>
+							<td align="right"><span>JQuery</span></td>
 							<td><div class="pl-div" style="background: #F9A825;">2</div></td>
 						</tr>
 						<tr>
-							<td style="padding-right: 25px;"><span>C++</span></td>
+							<td align="right"><span>C++</span></td>
 							<td><div class="pl-div" style="background: #FBC02D;">1.5</div></td>
 						</tr>
 						<tr>
-							<td style="padding-right: 25px;"><span>C</span></td>
+							<td align="right"><span>C</span></td>
 							<td><div class="pl-div" style="background: #FDD835;">1</div></td>
 						</tr>
 						<tr>
-							<td style="padding-right: 25px;"><span>Python</span></td>
+							<td align="right"><span>Python</span></td>
 							<td><div class="pl-div" style="background: #FFEB3B;">0.5</div></td>
 						</tr>
 					</table>
