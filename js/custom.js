@@ -424,6 +424,7 @@ $(document).ready(function(){
 	header.onload = displayContent();
 	img.onload = setHeightsEven();
 
+
 	$('.header-title')
 	.animate({opacity: 'show'}, {queue: false, duration: 1500})
 	.animate({marginTop: h*.3}, {duration: 750, complete: function(){
@@ -524,17 +525,19 @@ $(window).resize(function(){
 	$('.header-div').width(w);
 	$('.header-div').height(h);
 	
-	if(stt < ptt){
-		$('html body').scrollTop(st.offset().top);
-	}
-	else if(ptt < amtt && ptt < stt){
-		$('html body').scrollTop(pt.offset().top);
-	}
-	else if(amtt < bt){
-		$('html body').scrollTop(amt.offset().top);
-	}
-	else{
-		$('html body').scrollTop(0);
+	if(window.innerWidth >= 768){	
+		if(stt < ptt){
+			$('html body').scrollTop(st.offset().top);
+		}
+		else if(ptt < amtt && ptt < stt){
+			$('html body').scrollTop(pt.offset().top);
+		}
+		else if(amtt < bt){
+			$('html body').scrollTop(amt.offset().top);
+		}
+		else{
+			$('html body').scrollTop(0);
+		}
 	}
 	
 	aboutMeCardPositions();
