@@ -424,10 +424,18 @@ $(document).ready(function(){
 	header.onload = displayContent();
 	img.onload = setHeightsEven();
 
-
+	var htmp;
+	if(window.innerWidth < 768){
+		htmp = h*0.2;
+	}
+	else{
+		htmp = h*0.3;
+	}
+	
+	
 	$('.header-title')
 	.animate({opacity: 'show'}, {queue: false, duration: 1500})
-	.animate({marginTop: h*.3}, {duration: 750, complete: function(){
+	.animate({marginTop: htmp}, {duration: 750, complete: function(){
 		$('.s1')
 		.css({opacity: 0.0, visibility: "visible", marginTop: '-1%'}).animate({opacity: 1}, 
 		{queue: false, duration: 500, complete: function(){
@@ -518,7 +526,16 @@ $(window).resize(function(){
 	if(h < 480){
 		h = 480;
 	}
-	$('.header-title').css('marginTop', h*.3)
+	
+	var htmp;
+	if(window.innerWidth < 768){
+		htmp = h*0.2;
+	}
+	else{
+		htmp = h*0.3;
+	}
+	
+	$('.header-title').css('marginTop', htmp)
 	$('.blur').width(w);
 	$('.blur').height(h);
 	

@@ -493,7 +493,7 @@ body{
 
 .downarrow-mobile{
 	width: 50px!important;
-	margin-left: -20px!important;
+	margin-left: -25px!important;
 }
 
 @media screen and (max-width: 499px) {
