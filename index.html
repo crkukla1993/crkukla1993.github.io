@@ -11,7 +11,7 @@
 	</head>
 
 	<body>
-		<span id="wh" style="position: absolute; top: 0; color: white;"></span>
+		<div id="wh" style="background: #424242; position: fixed; color: white; z-index: 1000; font-size:1.25em;"></div>
 		<div class="header-div">
 			<div class="blur"></div>
 			<table>
@@ -81,10 +81,10 @@
 			<div id="portfolio">
 				<div id="portfoliotitle">
 					<h1>Portfolio:</h1>
-					<input id="closeportfolio" type="image" src="imgs/x.png" onclick="closePortfolio(this)" style="display: none; position: absolute; z-index:50; right: 0;" />
-					<table id="portfoliotable">
+					<input id="closeportfolio" type="image" src="imgs/x.png" style="display: none; position: absolute; z-index:50; right: 0;" />
+					<table id="portfolio-table">
 						<tr>
-							<td id="onp-cell" onclick="workClicked(this)">
+							<td id="onp-cell">
 								<div id="onp">
 									<h4 id="onp-title" class="img-title">Overnight<br/>Parking<br/>Police<br/>System</h4>
 									<p id="onp-desc">
@@ -96,7 +96,7 @@
 									</p>
 								</div>
 							</td>
-							<td id="onpuser-cell" onclick="workClicked(this)">
+							<td id="onpuser-cell">
 								<div id="onpuser">
 									<h4 id="onpuser-title" class="img-title">Overnight<br/>Parking<br/>User<br/>Form</h4>
 									<p id="onpuser-desc">
@@ -107,7 +107,7 @@
 									</p>
 								</div>
 							</td>
-							<td id="ebid-cell" onclick="workClicked(this)">
+							<td id="ebid-cell">
 								<div id="ebid">
 									<h4 id="ebid-title" class="img-title">Online<br/>Job<br/>Bidding<br/>Module</h4>
 									<p id="ebid-desc">
@@ -118,7 +118,7 @@
 									</p>
 								</div>
 							</td>
-							<td id="carpool-cell" onclick="workClicked(this)">
+							<td id="carpool-cell">
 								<div id="carpool">
 									<h4 id="carpool-title" class="img-title">Carpool<br/>Android<br/>App</h4>
 									<p id="carpool-desc">

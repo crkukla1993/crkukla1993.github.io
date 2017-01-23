@@ -27,14 +27,14 @@ body{
 	width: 100%;
 }
 
-#portfoliotable{
+#portfolio-table{
 	width: 100%;
-	height: 531px;
+	height: 631px;
 	padding-bottom: 1.5em;
 }
 
 
-#portfoliotable td{
+#portfolio-table td{
 	position: relative;
 	width: 25%;
 	color: white;
@@ -59,7 +59,7 @@ body{
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-#portfoliotable p{
+#portfolio-table p{
 	display:none;
 	bottom: 0;
 	margin-left: -1em;
@@ -319,7 +319,6 @@ body{
 	float: left;
 	clear: both;
 	padding-top: 1.25em;
-	min-height: 500px;
 }
 
 #skillstitle div{
@@ -473,7 +472,7 @@ body{
 	border-radius: 2px;
 	float: left;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
+	text-shadow: #212121 1px 1px 0, black 1px 1px 0.5px;
 	padding: 0.375em!important;
 	color: #f5f5f5;
 	margin-left: 0.75em;
@@ -481,10 +480,10 @@ body{
 	visibility: hidden;
 	white-space: nowrap;
 	overflow: hidden;
-	-webkit-transition:  all 2s ease-in-out;
-    -moz-transition:  all 2s ease-in-out;
-    -o-transition:  all 2s ease-in-out;
-    transition:  all 2s ease-in-out;
+	-webkit-transition:  width 1s;
+    -moz-transition:  width 1s;
+    -o-transition:  width 1s;
+    transition:  width 1s;
 }
 
 .pl-div div{
@@ -617,6 +616,7 @@ body{
 @media screen and (min-width: 768px){
 	#skillstitle{
 		width: 35%;
+		min-height: 500px;
 	}
 	
 	#skillstext{
