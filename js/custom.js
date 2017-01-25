@@ -454,12 +454,11 @@ function setElementPositions(){
 
 $(document).ready(function(){
 	var header = document.getElementById('blur');
-	var img = document.getElementById('profilepic');
 	var h = $(window).height();
 	var w = $(window).width();
 	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight + '\nScrollTop: ' +  body.scrollTop + ' SkillTop: ';
 	header.onload = displayContent();
-	img.onload = setHeightsEven();
+	$('#profilepic').load(setHeightsEven());
 	var b = $(body);
 	document.addEventListener('wheel', function(){
 		b.stop();
