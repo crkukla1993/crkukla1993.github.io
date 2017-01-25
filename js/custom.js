@@ -31,6 +31,7 @@ var background = $('#blur');
 var headerDiv = $('#header-div');
 
 var headerTitle = $('#header-title');
+var docWidth = $(window).width(), docHeight = $(window).height();
 
 var plArr;
 var largest;
@@ -559,82 +560,84 @@ $(document).ready(function(){
 });
 
 $(window).resize(function(){
-	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;	
-	var bt = body.scrollTop;
-	var stt = Math.abs(skills.offsetTop - bt);
-	var ptt = Math.abs(portfolio.offsetTop - bt);
-	var amtt = Math.abs(aboutMe.offsetTop - bt);
-	var h = $(window).height();
-	var w = $(window).width();
-	
-	aboutMe.style.height = 'auto';
-	aboutMeText.style.height = 'auto';
-	portfolio.style.height = 'auto';
-	skills.style.height = 'auto';
-	skillsText.style.height = 'auto';
-	setHeightsEven();
-	
-	if(h < 480){
-		h = 480;
-	}
-	
-	var htmp;
-	var windowWid = window.innerWidth;
-	if(windowWid < 768){
-		htmp = h*0.2;
-	}
-	else{
-		htmp = h*0.3;
-	}
-	
-	if(windowWid < 435){
-		$('.s1').css('display', 'block');
-	}
-	else if(windowWid < 480){
-		$('.s1').css('margin', '0 0.05em');
-	}
-	else if(windowWid < 525){
-		$('.s1').css('margin', '0 0.25em');
+	if($(window).width() != docWidth || $(window).height() != docHeight){
+		document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;	
+		var bt = body.scrollTop;
+		var stt = Math.abs(skills.offsetTop - bt);
+		var ptt = Math.abs(portfolio.offsetTop - bt);
+		var amtt = Math.abs(aboutMe.offsetTop - bt);
+		var h = $(window).height();
+		var w = $(window).width();
 		
-	}
-	else{
-		$('.s1').css('margin', '0 1em');
-		$('.s1').css('display', 'inline');
-	}
-	
-	headerTitle.css('marginTop', htmp);
-	background.width(w);
-	background.height(h);
-	headerDiv.width(w);
-	headerDiv.height(h);
-	
-	/*if(window.innerWidth >= 768){	
-		if(stt < ptt){
-			body.scrollTop = skills.offsetTop;
+		aboutMe.style.height = 'auto';
+		aboutMeText.style.height = 'auto';
+		portfolio.style.height = 'auto';
+		skills.style.height = 'auto';
+		skillsText.style.height = 'auto';
+		setHeightsEven();
+		
+		if(h < 480){
+			h = 480;
 		}
-		else if(ptt < amtt && ptt < stt){
-			body.scrollTop = portfolio.offsetTop;
-		}
-		else if(amtt < bt){
-			body.scrollTop = aboutMe.offsetTop;
+		
+		var htmp;
+		var windowWid = window.innerWidth;
+		if(windowWid < 768){
+			htmp = h*0.2;
 		}
 		else{
-			body.scrollTop = 0;
+			htmp = h*0.3;
 		}
-	}*/
-	closePortfolio();
-	
-	if(!isMobileWidth()){
-		if(aboutMeCardPositions()){
-			if(portfolioCardPostions()){
-				skillsCardPostions();
+		
+		if(windowWid < 435){
+			$('.s1').css('display', 'block');
+		}
+		else if(windowWid < 480){
+			$('.s1').css('margin', '0 0.05em');
+		}
+		else if(windowWid < 525){
+			$('.s1').css('margin', '0 0.25em');
+			
+		}
+		else{
+			$('.s1').css('margin', '0 1em');
+			$('.s1').css('display', 'inline');
+		}
+		
+		headerTitle.css('marginTop', htmp);
+		background.width(w);
+		background.height(h);
+		headerDiv.width(w);
+		headerDiv.height(h);
+		
+		/*if(window.innerWidth >= 768){	
+			if(stt < ptt){
+				body.scrollTop = skills.offsetTop;
+			}
+			else if(ptt < amtt && ptt < stt){
+				body.scrollTop = portfolio.offsetTop;
+			}
+			else if(amtt < bt){
+				body.scrollTop = aboutMe.offsetTop;
+			}
+			else{
+				body.scrollTop = 0;
+			}
+		}*/
+		closePortfolio();
+		
+		if(!isMobileWidth()){
+			if(aboutMeCardPositions()){
+				if(portfolioCardPostions()){
+					skillsCardPostions();
+				}
 			}
 		}
+		else{
+			animateGraphs();
+		}
+		setElementPositions();
 	}
-	else{
-		animateGraphs();
-	}
-	setElementPositions();
 	return false;
 });
 	
@@ -708,14 +711,14 @@ $('#closeportfolio').click(function(){
 });
 
 $('#aboutmebtn').click(function(){
-	$(body).animate({scrollTop: aboutMe.offsetTop}, 1500);
+	$(body).animate({scrollTop: document.getElementById('blur').offsetHeight}, 1500);
 	return false;
 });
 $('#portfoliobtn').click(function(){
-	$(body).animate({scrollTop: portfolio.offsetTop}, 2250);
+	$(body).animate({scrollTop: (document.getElementById('blur').offsetHeight + document.getElementById('aboutme').offsetHeight)}, 2250);
 	return false;
 });
 $('#skillsbtn').click(function(){
-	$(body).animate({scrollTop: skills.offsetTop}, 3000);
+	$(body).animate({scrollTop: (document.getElementById('blur').offsetHeight + document.getElementById('aboutme').offsetHeight + portfolio.offsetHeight)}, 3000);
 	return false;
 });
