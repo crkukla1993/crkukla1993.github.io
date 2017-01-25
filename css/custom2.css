@@ -248,10 +248,11 @@ body{
 }
 
 #aboutmetitle div {
-	padding: 0 1.5em 1em 1.5em;
+	padding: 1em 1.5em 1em 1.5em;
 }
 
 #aboutmetitle h1{
+	margin-bottom: -0.75em;
 	padding-left: 1em;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
 	color: #f5f5f5;
@@ -287,9 +288,11 @@ body{
 
 #portfoliotitle{
 	top: 0;
+	width: 100%;
 	position: absolute;
 	z-index: 35;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	padding-top: 1.25em;
 	background: #546E7A;
 }
 
@@ -297,7 +300,6 @@ body{
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
 	color: #f5f5f5;
 	padding-left: 1em;
-	padding-top: 0.75em;
 	margin-top: 0;
 }
 	
@@ -308,6 +310,7 @@ body{
 	z-index: 25;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	background: #455A64;
+	padding-top: 1.25em;
 }
 
 #skillstitle div{
@@ -324,7 +327,6 @@ body{
 	color: #f5f5f5;
 	padding-left: 0.75em;
 	margin-top: 0;
-	padding-top: 0.75em;
 }
 
 #skillstext{
@@ -342,11 +344,21 @@ body{
 
 #skillstext table{
 	color: black;
+	font-size: 1.15em;
 	padding: 0 3em 1.5em 1.75em;
 }
 
 .s1{
-	margin: 0 1em;
+	margin-right: 2em;
+	visibility: hidden;
+}
+
+.s2{
+	visibility: hidden;
+}
+
+.s3{
+	margin-left: 2em;
 	visibility: hidden;
 }
 
@@ -366,7 +378,7 @@ body{
 	margin-top: -0.75em;
 	margin-left: -0.75em;
 	padding-right: 0.75em;
-	padding-bottom: 0;
+	padding-bottom: 0.75em;
 	position: absolute;
 	background: #212121;
 	-webkit-filter: blur(4px);
@@ -375,10 +387,6 @@ body{
 	-ms-filter: blur(4px);
 	filter: blur(4px);
 }
-
-/*.blurbackup{
-	background: url(../imgs/bg.gif);
-}*/
 
 #header-div table{
 	z-index: 3;
@@ -482,172 +490,6 @@ body{
 	width: 25%;
 }
 
-/*.portfolio-cell-mobile{
-	width: 50%;
-	height: 50%;
-}
-
-.downarrow-mobile{
-	width: 50px!important;
-	margin-left: -25px!important;
-}*/
-
-/*@media screen and (max-width: 499px) {
-	h1{
-		font-size: 1.5em;
-	}
-	
-	#aboutmetitle h2{
-		font-size: 1.25em;
-	}
-	
-	#aboutmetitle h3{
-		font-size: 0.8em;
-	}
-	
-	#aboutmetext h3{
-		font-size: 1.1em;
-	}
-	
-	#skillstext h3{
-		font-size: 1.1em;
-	}
-	
-	p{
-		font-size: 0.875em;
-	}
-	
-	#skills-table span{
-		font-size: 0.875em;
-	}
-	
-	#secondary-title{
-		font-size: 0.75em;
-	}
-	
-	.header-btn{
-		font-size: 1.25em;
-		padding: 1.75em 1em 1.75em 1em;
-		border: 3px solid #f5f5f5;
-		display: block;
-		width: 100%;
-		margin: -3px 0 0 0;
-	}
-	
-	.img-title{
-		font-size: 1.25em;
-	}
-	
-	.pl-div{
-		font-size: 0.5em;
-	}
-	
-}
-
-@media screen and (min-width: 500px) and (max-width: 767px) {
-	h1{
-		font-size: 2.25em;
-	}
-	
-	#aboutmetitle h2{
-		font-size: 2.25em;
-	}
-	
-	#aboutmetitle h3{
-		font-size: 1.25em;
-	}
-	
-	#aboutmetext h3{
-		font-size: 1.3em;
-	}
-	
-	#skillstext h3{
-		font-size: 1.3em;
-	}
-	
-	p{
-		font-size: 1.15em;
-	}
-	
-	#skills-table span{
-		font-size: 1em;
-	}
-	
-	.header-btn{
-		font-size: 1.25em;
-		padding: 1.75em 1em 1.75em 1em;
-		display: block;
-		width: 100%;
-		margin: -4px 0 0 0;
-	}
-
-	#secondary-title{
-		font-size: 1em;
-	}
-	
-	.img-title{
-		font-size: 1.5em;
-	}
-	
-	.pl-div{
-		font-size: 0.6em;
-	}
-}*/
-@media screen and (max-width: 767px){
-	h1{
-		padding-top: 0.75em;
-	}
-	
-	#header-title{
-		font-size: 1.75em;
-	}
-	
-	#secondary-title{
-		font-size: 1em;
-	}
-	
-	#aboutmetitle{
-		width: 100%;
-		top: 0;
- 		position: relative;
-	}
-	#portfoliotitle{
-		width: 100%;
-		left: 0;
-		position: relative;
-	}
-	#skillstitle{
-		width: 100%;
-		top: 0;
-		position: relative;
-	}
-	#aboutmetext{
-		width: 100%;
-		top: 0;
-		position: relative;
-	}
-	#skillstext{
-		width: 100%;
-		top: 0;
-		position: relative;
-	}
-	
-	#skillstext table{
-	padding: 0 1.5em 1.5em 1.25em;
-	}
-	
-	#portfolio-table p{
-		font-size: 0.6em;
-	}
-	
-	.pl-div{
-		font-size: 0.6em;
-	}
-	
-	#skills-table span{
-		font-size: 0.75em;
-	}
-}
 @media screen and (min-width: 768px){
 	#skillstitle{
 		width: 35%;
@@ -669,7 +511,6 @@ body{
 	}
 	
 	#portfoliotitle{
-		width: 100%;
 		right: 0;
 	}
 	
@@ -716,10 +557,6 @@ body{
 	}
 	
 	p{
-		font-size: 0.875em;
-	}
-	
-	#portfolio-table p{
 		font-size: 0.875em;
 	}
 	
@@ -777,21 +614,3 @@ body{
 		font-size: 0.85em;
 	}
 }
-
-/*@media screen and (min-width:1280px) {
-	h1{
-		font-size: 2.5em;
-	}
-	
-	#aboutmetitle h2{
-		font-size: 2.25em;
-	}
-	
-	#aboutmetitle h3{
-		font-size: 1.25em;
-	}
-	
-	.pl-div{
-		font-size: 1em;
-	}
-}*/
