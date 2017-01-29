@@ -1,11 +1,30 @@
 var preG1 = new Image();
-preG1.src = './imgs/g1.jpg';
+preG1.src = 'https://crkukla1993.github.io/imgs/g1.jpg';
 var preG2 = new Image();
-preG2.src = './imgs/g2.jpg';
+preG2.src = 'https://crkukla1993.github.io/imgs/g2.jpg';
 var preG3 = new Image();
-preG3.src = './imgs/g3.jpg';
+preG3.src = 'https://crkukla1993.github.io/imgs/g3.jpg';
 var preG4 = new Image();
-preG4.src = './imgs/g4.jpg';
+preG4.src = 'https://crkukla1993.github.io/imgs/g4.jpg';
+var profilePic = document.getElementById('profilepic');
+var downloadingImage = new Image();
+downloadingImage.onload = function(){
+	body.scrollTop = 0;
+    profilePic.src = this.src;
+	setHeightsEven();
+	if(!isMobileWidth()){
+		if(aboutMeCardPositions()){
+			if(portfolioCardPostions()){
+				skillsCardPostions();
+			}
+		}
+	}
+	else{
+		animateGraphs();
+	}
+	setElementPositions();
+};
+downloadingImage.src = 'https://crkukla1993.github.io/imgs/me.jpg';
 
 var isClickable = true;
 var workSelected = false;
@@ -458,7 +477,6 @@ $(document).ready(function(){
 	var w = $(window).width();
 	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight + '\nScrollTop: ' +  body.scrollTop + ' SkillTop: ';
 	header.onload = displayContent();
-	$('#profilepic').load(setHeightsEven());
 	var b = $(body);
 	document.addEventListener('wheel', function(){
 		b.stop();
@@ -544,7 +562,7 @@ $(document).ready(function(){
 			}
 		}, 4000);
 	}
-	if(!isMobileWidth()){
+	/*if(!isMobileWidth()){
 		if(aboutMeCardPositions()){
 			if(portfolioCardPostions()){
 				skillsCardPostions();
@@ -554,7 +572,7 @@ $(document).ready(function(){
 	else{
 		animateGraphs();
 	}
-	setElementPositions();
+	setElementPositions();*/
 	return false;
 });
 
