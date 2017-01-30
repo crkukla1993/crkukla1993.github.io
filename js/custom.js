@@ -6,25 +6,6 @@ var preG3 = new Image();
 preG3.src = 'https://crkukla1993.github.io/imgs/g3.jpg';
 var preG4 = new Image();
 preG4.src = 'https://crkukla1993.github.io/imgs/g4.jpg';
-var profilePic = document.getElementById('profilepic');
-var downloadingImage = new Image();
-downloadingImage.onload = function(){
-	body.scrollTop = 0;
-    profilePic.src = this.src;
-	setHeightsEven();
-	if(!isMobileWidth()){
-		if(aboutMeCardPositions()){
-			if(portfolioCardPostions()){
-				skillsCardPostions();
-			}
-		}
-	}
-	else{
-		animateGraphs();
-	}
-	setElementPositions();
-};
-downloadingImage.src = 'https://crkukla1993.github.io/imgs/me.jpg';
 
 var isClickable = true;
 var workSelected = false;
@@ -55,6 +36,27 @@ var docWidth = $(window).width(), docHeight = $(window).height();
 var plArr;
 var largest;
 var bounced;
+
+var profilePic = document.getElementById('profilepic');
+var downloadingImage = new Image();
+downloadingImage.onload = function(){
+    profilePic.src = this.src;
+	displayContent();
+	setHeightsEven();
+	if(!isMobileWidth()){
+		if(aboutMeCardPositions()){
+			if(portfolioCardPostions()){
+				skillsCardPostions();
+			}
+		}
+	}
+	else{
+		animateGraphs();
+	}
+	setElementPositions();
+	body.scrollTop = 0;
+};
+downloadingImage.src = 'https://crkukla1993.github.io/imgs/me.jpg';
 
 function aboutMeCardPositions(){
 	var papa = headerDiv.height();
@@ -237,7 +239,7 @@ function isMobileWidth(){
 
 function displayContent(){
 	var content = document.getElementById('content-div');
-	content.style.display = 'block';
+	content.style.display = 'inline';
 }
 
 function closePortfolio(){
@@ -476,7 +478,6 @@ $(document).ready(function(){
 	var h = $(window).height();
 	var w = $(window).width();
 	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight + '\nScrollTop: ' +  body.scrollTop + ' SkillTop: ';
-	header.onload = displayContent();
 	var b = $(body);
 	document.addEventListener('wheel', function(){
 		b.stop();
@@ -659,32 +660,34 @@ $(window).resize(function(){
 });
 	
 $(window).scroll(function(){
+	if(body.scrollTop !== 0){
 	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
-	if(!isMobileWidth()){
-		if(aboutMeCardPositions()){
-			if(portfolioCardPostions()){
-				skillsCardPostions();
-			}
-		}
-		
-		var t;
-		if(body.scrollTop === 0){
-			downArrow.animate({opacity: 1}, {queue: false, duration: 300});
-		
-			t = setTimeout(function(){
-				var a = downArrow.css("opacity");
-				if(a !== '0' && !bounced){
-					downArrow.effect('bounce', {times: 3}, 500);
-					bounced = true;
+		if(!isMobileWidth()){
+			if(aboutMeCardPositions()){
+				if(portfolioCardPostions()){
+					skillsCardPostions();
 				}
-			}, 5000);
-		}
-		else{
-			if(t !== null){
-				clearTimeout(t);
 			}
-			bounced = false;
-			downArrow.animate({opacity: 0}, {queue: false, duration: 300});
+			
+			var t;
+			if(body.scrollTop === 0){
+				downArrow.animate({opacity: 1}, {queue: false, duration: 300});
+			
+				t = setTimeout(function(){
+					var a = downArrow.css("opacity");
+					if(a !== '0' && !bounced){
+						downArrow.effect('bounce', {times: 3}, 500);
+						bounced = true;
+					}
+				}, 5000);
+			}
+			else{
+				if(t !== null){
+					clearTimeout(t);
+				}
+				bounced = false;
+				downArrow.animate({opacity: 0}, {queue: false, duration: 300});
+			}
 		}
 	}
 });
