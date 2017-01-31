@@ -493,7 +493,7 @@ function setElementPositions(){
 $(document).ready(function(){
 	$(body).animate({scrollTop: 0}, 1);
 	var header = document.getElementById('blur');
-	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight + '\nScrollTop: ' +  body.scrollTop + ' SkillTop: ';
+	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
 	var b = $(body);
 	document.addEventListener('wheel', function(){
 		b.stop();
