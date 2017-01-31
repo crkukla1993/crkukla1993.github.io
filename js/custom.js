@@ -529,6 +529,11 @@ $(document).ready(function(){
 		$('.s1').css('display', 'inline');
 	}
 	
+	background.width(w);
+	background.height(h);
+	headerDiv.width(w);
+	headerDiv.height(h);
+	
 	headerTitle.animate({opacity: 'show'}, {queue: false, duration: 1500})
 	.animate({marginTop: htmp}, {duration: 750, complete: function(){
 		$('#p1.s1')
@@ -587,13 +592,6 @@ $(document).ready(function(){
 		animateGraphs();
 	}
 	setElementPositions();*/
-	h = $(window).height();
-	w = $(window).width();
-	
-	background.width(w);
-	background.height(h);
-	headerDiv.width(w);
-	headerDiv.height(h);
 	return false;
 });
 
