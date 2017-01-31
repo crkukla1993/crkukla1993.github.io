@@ -621,6 +621,7 @@ input{
 	}
 	
 	#aboutmetitle{
+		margin-top: -1.25em;
 		width: 100%;
 		top: 0;
  		position: relative;
