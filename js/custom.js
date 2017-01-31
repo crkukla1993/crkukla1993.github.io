@@ -56,7 +56,6 @@ downloadingImage.onload = function(){
 		animateGraphs();
 	}
 	setElementPositions();
-	$(body).animate({scrollTop: 0}, 1);
 	initLoad = true;
 };
 downloadingImage.src = 'https://crkukla1993.github.io/imgs/me.jpg';
@@ -492,14 +491,15 @@ function setElementPositions(){
 
 
 $(document).ready(function(){
+	$(body).animate({scrollTop: 0}, 1);
 	var header = document.getElementById('blur');
-	var h = $(window).height();
-	var w = $(window).width();
-	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight + '\nScrollTop: ' +  body.scrollTop + ' SkillTop: ';
+	//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight + '\nScrollTop: ' +  body.scrollTop + ' SkillTop: ';
 	var b = $(body);
 	document.addEventListener('wheel', function(){
 		b.stop();
 	}, {passive: true});
+	var h = $(window).height();
+	var w = $(window).width();
 	
 	if(h < 480){
 		h = 480;
@@ -566,11 +566,6 @@ $(document).ready(function(){
 		}
 	}
 	
-	background.width(w);
-	background.height(h);
-	headerDiv.width(w);
-	headerDiv.height(h);
-	
 	var t;
 	if(!isMobileWidth()){
 		var bounced = false;
@@ -592,12 +587,19 @@ $(document).ready(function(){
 		animateGraphs();
 	}
 	setElementPositions();*/
+	h = $(window).height();
+	w = $(window).width();
+	
+	background.width(w);
+	background.height(h);
+	headerDiv.width(w);
+	headerDiv.height(h);
 	return false;
 });
 
 $(window).resize(function(){
 	if($(window).width() != docWidth || $(window).height() != docHeight){
-		document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;	
+		//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;	
 		var bt = body.scrollTop;
 		var stt = Math.abs(skills.offsetTop - bt);
 		var ptt = Math.abs(portfolio.offsetTop - bt);
@@ -679,7 +681,7 @@ $(window).resize(function(){
 	
 $(window).scroll(function(){
 	if(!initLoad){
-		document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
+		//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
 		if(!isMobileWidth()){
 			if(aboutMeCardPositions()){
 				if(portfolioCardPostions()){
