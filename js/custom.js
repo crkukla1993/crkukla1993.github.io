@@ -493,7 +493,7 @@ function setElementPositions(){
 $(document).ready(function(){
 	$(body).animate({scrollTop: 0}, 1);
 	var header = document.getElementById('blur');
-	//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight + '\nScrollTop: ' +  body.scrollTop + ' SkillTop: ';
+	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight + '\nScrollTop: ' +  body.scrollTop + ' SkillTop: ';
 	var b = $(body);
 	document.addEventListener('wheel', function(){
 		b.stop();
@@ -597,7 +597,7 @@ $(document).ready(function(){
 
 $(window).resize(function(){
 	if($(window).width() != docWidth || $(window).height() != docHeight){
-		//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;	
+		document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;	
 		var bt = body.scrollTop;
 		var stt = Math.abs(skills.offsetTop - bt);
 		var ptt = Math.abs(portfolio.offsetTop - bt);
@@ -679,7 +679,7 @@ $(window).resize(function(){
 	
 $(window).scroll(function(){
 	if(!initLoad){
-		//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
+		document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
 		if(!isMobileWidth()){
 			if(aboutMeCardPositions()){
 				if(portfolioCardPostions()){
