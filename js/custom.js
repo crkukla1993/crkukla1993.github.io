@@ -33,6 +33,8 @@ var headerDiv = $('#header-div');
 var headerTitle = $('#header-title');
 var docWidth = $(window).width(), docHeight = $(window).height();
 
+var initLoad = true;
+
 var plArr;
 var largest;
 var bounced;
@@ -54,13 +56,14 @@ downloadingImage.onload = function(){
 		animateGraphs();
 	}
 	setElementPositions();
-	body.scrollTop = 0;
+	$(body).animate({scrollTop: 0}, 1);
+	initLoad = true;
 };
 downloadingImage.src = 'https://crkukla1993.github.io/imgs/me.jpg';
 
 function aboutMeCardPositions(){
 	var papa = headerDiv.height();
-	var amt = aboutMe.scrollHeight;
+	var amt = aboutMe.scrollHeight/1.25;
 	var pgt = body.scrollTop;
 	if(pgt < amt){
 		var percent = pgt/amt;
@@ -86,7 +89,7 @@ function portfolioCardPostions(){
 	var onpUser = $('#onpuser');
 	var ebid = $('#ebid');
 	var carpool = $('#carpool');
-	var pt = aboutMe.scrollHeight + portfolio.offsetHeight;
+	var pt = aboutMe.scrollHeight + portfolio.offsetHeight/1.25;
 	var pgt = body.scrollTop;
 	if(pgt < pt){
 		var percent = pgt/pt;
@@ -98,6 +101,10 @@ function portfolioCardPostions(){
 			onpUser.addClass('onpuserClicked');
 			ebid.addClass('ebidClicked');
 			carpool.addClass('carpoolClicked');
+			onp.removeClass('animate-onp');
+			onpUser.removeClass('animate-onpuser');
+			ebid.removeClass('animate-ebid');
+			carpool.removeClass('animate-carpool');
 		}
 		positionSkills = false;
 		isClickable = false;
@@ -108,6 +115,10 @@ function portfolioCardPostions(){
 			onpUser.removeClass('onpuserClicked');
 			ebid.removeClass('ebidClicked');
 			carpool.removeClass('carpoolClicked');
+			onp.addClass('animate-onp');
+			onpUser.addClass('animate-onpuser');
+			ebid.addClass('animate-ebid');
+			carpool.addClass('animate-carpool');
 		}
 		portfolio.style.right = 0;
 		isClickable = true;
@@ -118,14 +129,14 @@ function portfolioCardPostions(){
 }
 
 function skillsCardPostions(){
-	var st = aboutMe.scrollHeight + portfolio.offsetHeight + skillstitle.offsetHeight;
-	var stxt = aboutMe.scrollHeight + portfolio.offsetHeight + skillstext.offsetHeight;
+	var st = aboutMe.scrollHeight + portfolio.offsetHeight + skillstitle.offsetHeight/2;
+	var stxt = aboutMe.scrollHeight + portfolio.offsetHeight + (skillstext.offsetHeight/2);
 	var pgt = body.scrollTop;
 	
 	if(pgt < stxt){
 		var percentH = pgt/stxt;
 		var hei = skillsText.offsetHeight;
-		var amountH = ((-1*((hei * percentH) - hei))*2) + 'px';
+		var amountH = (((hei * percentH) - hei)*-2) + 'px';
 		skillsText.style.top = amountH;
 		if(amountH !== '0px'){
 			setTimeout(function(){shrinkGraphs();}, 250);
@@ -293,6 +304,10 @@ function closePortfolio(){
 			onpUser.removeClass('onpuserClicked');
 			ebid.removeClass('ebidClicked');
 			carpool.removeClass('carpoolClicked');
+			onp.addClass('animate-onp');
+			onpUser.addClass('animate-onpuser');
+			ebid.addClass('animate-ebid');
+			carpool.addClass('animate-carpool');
 			setTimeout(function(){
 				isClickable = true;
 			}, 500);
@@ -434,7 +449,10 @@ function workClicked(e){
 			}, 1000);
 		}, 1250);
 	}
-	
+	onp.removeClass('animate-onp');
+	onpUser.removeClass('animate-onpuser');
+	ebid.removeClass('animate-ebid');
+	carpool.removeClass('animate-carpool');
 	if(workSelected){
 		setTimeout(function(){
 			document.getElementById('closeportfolio').style.display = 'block';
@@ -660,8 +678,8 @@ $(window).resize(function(){
 });
 	
 $(window).scroll(function(){
-	if(body.scrollTop !== 0){
-	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
+	if(!initLoad){
+		document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
 		if(!isMobileWidth()){
 			if(aboutMeCardPositions()){
 				if(portfolioCardPostions()){
@@ -689,6 +707,9 @@ $(window).scroll(function(){
 				downArrow.animate({opacity: 0}, {queue: false, duration: 300});
 			}
 		}
+	}
+	else{
+		initLoad = false;
 	}
 });
 
