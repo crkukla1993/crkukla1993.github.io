@@ -171,8 +171,7 @@ function skillsCardPostions(){
 	
 	if(pgt < st){
 		var percentW = pgt/st;
-		var wid = sw;
-		var amountW = ((((wid * percentW) - wid))*3) + 'px';
+		var amountW = ((((sw * percentW) - sw))*3) + 'px';
 		skills.style.left = amountW;
 	}
 	else{
