@@ -32,19 +32,40 @@ var headerDiv = $('#header-div');
 
 var headerTitle = $('#header-title');
 var docWidth = $(window).width(), docHeight = $(window).height();
-
 var initLoad = true;
 
 var plArr;
 var largest;
 var bounced;
 
+var abw;
+var abh;
+var abtw;
+var abth;
+var pw;
+var ph;
+var sw;
+var sh;
+var stw;
+var sth;
+
 var profilePic = document.getElementById('profilepic');
 var downloadingImage = new Image();
 downloadingImage.onload = function(){
     profilePic.src = this.src;
+	
 	displayContent();
 	setHeightsEven();
+	abw = aboutMe.offsetWidth;
+	abh = aboutMe.offsetHeight;
+	abtw = aboutMeText.offsetWidth;
+	abth = aboutMeText.offsetHeight;
+	pw = portfolio.offsetWidth;
+	ph = portfolio.offsetHeight;
+	sw = skills.offsetWidth;
+	sh = skills.offsetHeight;
+	stw = skillsText.offsetWidth;
+	sth = skillsText.offsetHeight;
 	if(!isMobileWidth()){
 		if(aboutMeCardPositions()){
 			if(portfolioCardPostions()){
@@ -56,20 +77,19 @@ downloadingImage.onload = function(){
 		animateGraphs();
 	}
 	setElementPositions();
+	$(body).animate({scrollTop: 0}, 1);
 	initLoad = true;
 };
 downloadingImage.src = 'https://crkukla1993.github.io/imgs/me.jpg';
 
 function aboutMeCardPositions(){
 	var papa = headerDiv.height();
-	var amt = aboutMe.scrollHeight/1.25;
-	var pgt = body.scrollTop;
+	var amt = abh/1.25;
+	var pgt = window.pageYOffset;
 	if(pgt < amt){
 		var percent = pgt/amt;
-		var wid0 = aboutMe.offsetWidth;
-		var wid1 = aboutMeText.offsetWidth;
-		var amount0 = ((wid0 * percent) - wid0) + 'px';
-		var amount1 = ((wid1 * percent) - wid1) + 'px';
+		var amount0 = ((abw * percent) - abw) + 'px';
+		var amount1 = ((abtw * percent) - abtw) + 'px';
 		aboutMe.style.left = amount0;
 		aboutMeText.style.right = amount1;
 		positionPortfolio = false;
@@ -88,12 +108,11 @@ function portfolioCardPostions(){
 	var onpUser = $('#onpuser');
 	var ebid = $('#ebid');
 	var carpool = $('#carpool');
-	var pt = aboutMe.scrollHeight + portfolio.offsetHeight/1.25;
-	var pgt = body.scrollTop;
+	var pt = abh + ph/1.25;
+	var pgt = window.pageYOffset;
 	if(pgt < pt){
 		var percent = pgt/pt;
-		var wid = portfolio.offsetWidth;
-		var amount = (((wid * percent) - wid)*2) + 'px';
+		var amount = (((pw * percent) - pw)*2) + 'px';
 		portfolio.style.right = amount;
 		if(document.getElementsByClassName('onpClicked').length < 1){
 			onp.addClass('onpClicked');
@@ -132,14 +151,14 @@ function portfolioCardPostions(){
 }
 
 function skillsCardPostions(){
-	var st = aboutMe.scrollHeight + portfolio.offsetHeight + skillstitle.offsetHeight/2;
-	var stxt = aboutMe.scrollHeight + portfolio.offsetHeight + (skillstext.offsetHeight/2);
-	var pgt = body.scrollTop;
+	var a = abh + ph;
+	var st = a + (sh/2);
+	var stxt = a + (sth/2);
+	var pgt = window.pageYOffset;
 	
 	if(pgt < stxt){
 		var percentH = pgt/stxt;
-		var hei = skillsText.offsetHeight;
-		var amountH = (((hei * percentH) - hei)*-2) + 'px';
+		var amountH = (((sth * percentH) - sth)*-2) + 'px';
 		skillsText.style.top = amountH;
 		if(amountH !== '0px'){
 			setTimeout(function(){shrinkGraphs();}, 250);
@@ -152,7 +171,7 @@ function skillsCardPostions(){
 	
 	if(pgt < st){
 		var percentW = pgt/st;
-		var wid = skills.offsetWidth;
+		var wid = sw;
 		var amountW = ((((wid * percentW) - wid))*3) + 'px';
 		skills.style.left = amountW;
 	}
@@ -193,10 +212,10 @@ function setHeightsEven(){
 	var amtxth;
 	var sth;
 	var stxth;
-	amth = aboutMe.scrollHeight;
-	amtxth = aboutMeText.scrollHeight;
-	sth = skills.scrollHeight;
-	stxth = skillsText.scrollHeight;
+	amth = aboutMe.offsetHeight;
+	amtxth = aboutMeText.offsetHeight;
+	sth = skills.offsetHeight;
+	stxth = skillsText.offsetHeight;
 	
 	if(!isMobileWidth()){		
 		if(amth < amtxth){
@@ -496,7 +515,6 @@ function setElementPositions(){
 
 
 $(document).ready(function(){
-	$(body).animate({scrollTop: 0}, 1);
 	var header = document.getElementById('blur');
 	//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
 	var b = $(body);
@@ -505,7 +523,6 @@ $(document).ready(function(){
 	}, {passive: true});
 	var h = $(window).height();
 	var w = $(window).width();
-	
 	if(h < 480){
 		h = 480;
 	}
@@ -603,7 +620,7 @@ $(document).ready(function(){
 $(window).resize(function(){
 	if($(window).width() != docWidth || $(window).height() != docHeight){
 		//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;	
-		var bt = body.scrollTop;
+		var bt = window.pageYOffset;
 		var stt = Math.abs(skills.offsetTop - bt);
 		var ptt = Math.abs(portfolio.offsetTop - bt);
 		var amtt = Math.abs(aboutMe.offsetTop - bt);
@@ -666,6 +683,16 @@ $(window).resize(function(){
 			}
 		}*/
 		closePortfolio();
+		abw = aboutMe.offsetWidth;
+		abh = aboutMe.offsetHeight;
+		abtw = aboutMeText.offsetWidth;
+		abth = aboutMeText.offsetHeight;
+		pw = portfolio.offsetWidth;
+		ph = portfolio.offsetHeight;
+		sw = skills.offsetWidth;
+		sh = skills.offsetHeight;
+		stw = skillsText.offsetWidth;
+		sth = skillsText.offsetHeight;
 		
 		if(!isMobileWidth()){
 			if(aboutMeCardPositions()){
@@ -692,7 +719,7 @@ $(window).scroll(function(){
 				}
 			}
 			
-			var t;
+			/*var t;
 			if(body.scrollTop === 0){
 				downArrow.animate({opacity: 1}, {queue: false, duration: 300});
 			
@@ -710,7 +737,7 @@ $(window).scroll(function(){
 				}
 				bounced = false;
 				downArrow.animate({opacity: 0}, {queue: false, duration: 300});
-			}
+			}*/
 		}
 	}
 	else{
