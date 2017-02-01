@@ -55,7 +55,6 @@ downloadingImage.onload = function(){
     profilePic.src = this.src;
 	
 	displayContent();
-	setHeightsEven();
 	abw = aboutMe.offsetWidth;
 	abh = aboutMe.offsetHeight;
 	abtw = aboutMeText.offsetWidth;
@@ -66,6 +65,7 @@ downloadingImage.onload = function(){
 	sh = skills.offsetHeight;
 	stw = skillsText.offsetWidth;
 	sth = skillsText.offsetHeight;
+	setHeightsEven();
 	if(!isMobileWidth()){
 		if(aboutMeCardPositions()){
 			if(portfolioCardPostions()){
@@ -207,28 +207,19 @@ function shrinkGraphs(){
 }
 
 function setHeightsEven(){
-	var amth;
-	var amtxth;
-	var sth;
-	var stxth;
-	amth = aboutMe.offsetHeight;
-	amtxth = aboutMeText.offsetHeight;
-	sth = skills.offsetHeight;
-	stxth = skillsText.offsetHeight;
-	
 	if(!isMobileWidth()){		
-		if(amth < amtxth){
-			aboutMe.style.height = amtxth + 'px';
+		if(abh < abth){
+			aboutMe.style.height = abth + 'px';
 		}
 		else{
-			aboutMeText.style.height = amth + 'px';
+			aboutMeText.style.height = abh + 'px';
 		}
 		
-		if(sth < stxth){
-			skills.style.height = stxth + 'px';
+		if(sh < sth){
+			skills.style.height = sth + 'px';
 		}
 		else{
-			skillsText.style.height = sth + 'px';
+			skillsText.style.height = sh + 'px';
 		}
 	}
 }
@@ -593,7 +584,7 @@ $(document).ready(function(){
 	}
 	
 	var t;
-	if(!isMobileWidth()){
+	/*if(!isMobileWidth()){
 		var bounced = false;
 		t = setTimeout(function(){
 			if(downArrow.css("opacity") !== '0' && !bounced){
@@ -602,7 +593,7 @@ $(document).ready(function(){
 			}
 		}, 4000);
 	}
-	/*if(!isMobileWidth()){
+	if(!isMobileWidth()){
 		if(aboutMeCardPositions()){
 			if(portfolioCardPostions()){
 				skillsCardPostions();
