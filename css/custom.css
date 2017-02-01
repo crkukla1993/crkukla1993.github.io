@@ -57,10 +57,11 @@ input{
 	z-index: 47;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	padding: 0;
-	-webkit-transition:  all 1s;
-    -moz-transition:  all 1s;
-    -o-transition:  all 1s;
-    transition:  all 1s;
+	-webkit-transition: all 1s;
+    -moz-transition: all 1s;
+	-ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
 }
 
 #portfolio-table p{
@@ -77,6 +78,7 @@ input{
 	background-image: url("../imgs/onp.jpg");
 	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	-ms-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -91,6 +93,7 @@ input{
 	background-image: url("../imgs/onpuser.jpg");
 	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	-ms-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -105,6 +108,7 @@ input{
 	background-image: url("../imgs/ebid.jpg");
 	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	-ms-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -119,6 +123,7 @@ input{
 	background-image: url("../imgs/carpool.jpg");
 	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     -moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	-ms-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     -o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -213,6 +218,11 @@ input{
 	cursor: default!important;
 	background-image: url("../imgs/g4.jpg")!important;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)!important;
+}
+
+.hidePortfolio{
+	height: 0;
+	width: 0;
 }
 
 #aboutmetitle{
@@ -386,11 +396,19 @@ input{
 
 #closeportfolio{
 	z-index: 20;
+	-webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
 	transition: all 0.3s;
 	opacity: 0.5;
 }
 
 #closeportfolio:hover{
+	-webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+	-ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
 	transition: opacity 0.3s ease;
 	opacity: 1;
 }
@@ -410,6 +428,10 @@ input{
 	display: inline-block;
 	z-index: 5;
 	margin: 1em;
+	-webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+	-ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
 	transition: background-color 0.3s ease;
 	font-family: Consolas;
 	font-weight: 400;
@@ -423,11 +445,19 @@ input{
 
 .header-btn:hover{
 	cursor: pointer;
+	-webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+	-ms-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
 	transition: background-color 0.5s ease;
 	background-color: #607D8B;
 }
 
 .header-btn:active:after{
+	-webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+	-ms-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
 	transition: background-color 0.5s ease;
 	background-color: #f5f5f5;
 }
@@ -445,10 +475,11 @@ input{
 	visibility: hidden;
 	white-space: nowrap;
 	overflow: hidden;
-	-webkit-transition:  width 1s;
-    -moz-transition:  width 1s;
-    -o-transition:  width 1s;
-    transition:  width 1s;
+	-webkit-transition: width 1s, height 1s;
+    -moz-transition: width 1s, height 1s;
+	-ms-transition: width 1s, height 1s;
+    -o-transition: width 1s, height 1s;
+    transition: width 1s, height 1s;
 }
 
 .pl-div div{
@@ -714,6 +745,7 @@ input{
 		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 		-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		-moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		-ms-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		-o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	}
@@ -724,6 +756,7 @@ input{
 		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 		-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		-moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		-ms-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		-o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	}
@@ -734,6 +767,7 @@ input{
 		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 		-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		-moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		-ms-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		-o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	}
@@ -744,6 +778,8 @@ input{
 		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 		-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		-moz-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		-ms-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		-ms-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		-o-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	}

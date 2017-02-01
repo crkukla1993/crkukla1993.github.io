@@ -100,10 +100,6 @@ function portfolioCardPostions(){
 			onpUser.addClass('onpuserClicked');
 			ebid.addClass('ebidClicked');
 			carpool.addClass('carpoolClicked');
-			onp.removeClass('animate-onp');
-			onpUser.removeClass('animate-onpuser');
-			ebid.removeClass('animate-ebid');
-			carpool.removeClass('animate-carpool');
 		}
 		positionSkills = false;
 		isClickable = false;
@@ -114,10 +110,18 @@ function portfolioCardPostions(){
 			onpUser.removeClass('onpuserClicked');
 			ebid.removeClass('ebidClicked');
 			carpool.removeClass('carpoolClicked');
-			onp.addClass('animate-onp');
-			onpUser.addClass('animate-onpuser');
-			ebid.addClass('animate-ebid');
-			carpool.addClass('animate-carpool');
+			if(!isMobileWidth()){
+				onp.addClass('animate-onp');
+				onpUser.addClass('animate-onpuser');
+				ebid.addClass('animate-ebid');
+				carpool.addClass('animate-carpool');
+			}
+			else{
+				onp.removeClass('animate-onp');
+				onpUser.removeClass('animate-onpuser');
+				ebid.removeClass('animate-ebid');
+				carpool.removeClass('animate-carpool');
+			}
 		}
 		portfolio.style.right = 0;
 		isClickable = true;
@@ -254,10 +258,6 @@ function displayContent(){
 
 function closePortfolio(){
 	if(isClickable){
-		var onp = $('#onp');
-		var onpUser = $('#onpuser');
-		var ebid = $('#ebid');
-		var carpool = $('#carpool');
 		var onpC = $('#onp-cell');
 		var onpUserC = $('#onpuser-cell');
 		var ebidC = $('#ebid-cell');
@@ -299,14 +299,7 @@ function closePortfolio(){
 			onpUserT.animate({opacity: 1}, 500);
 			ebidT.animate({opacity: 1}, 500);
 			carpoolT.animate({opacity: 1}, 500);
-			onp.removeClass('onpClicked');
-			onpUser.removeClass('onpuserClicked');
-			ebid.removeClass('ebidClicked');
-			carpool.removeClass('carpoolClicked');
-			onp.addClass('animate-onp');
-			onpUser.addClass('animate-onpuser');
-			ebid.addClass('animate-ebid');
-			carpool.addClass('animate-carpool');
+			portfolioClickedToggle(false);
 			setTimeout(function(){
 				isClickable = true;
 			}, 500);
@@ -314,11 +307,39 @@ function closePortfolio(){
 	}
 }
 
-function workClicked(e){
+function portfolioClickedToggle(show){
 	var onp = $('#onp');
 	var onpUser = $('#onpuser');
 	var ebid = $('#ebid');
 	var carpool = $('#carpool');
+	if(show){
+		if(!isMobileWidth()){
+			onp.removeClass('animate-onp');
+			onpUser.removeClass('animate-onpuser');
+			ebid.removeClass('animate-ebid');
+			carpool.removeClass('animate-carpool');
+		}
+		onp.addClass('onpClicked');
+		onpUser.addClass('onpuserClicked');
+		ebid.addClass('ebidClicked');
+		carpool.addClass('carpoolClicked');
+	}
+	else{
+		onp.removeClass('onpClicked');
+		onpUser.removeClass('onpuserClicked');
+		ebid.removeClass('ebidClicked');
+		carpool.removeClass('carpoolClicked');
+		if(!isMobileWidth()){
+			onp.addClass('animate-onp');
+			onpUser.addClass('animate-onpuser');
+			ebid.addClass('animate-ebid');
+			carpool.addClass('animate-carpool');
+		}
+	}
+}
+
+
+function workClicked(e){
 	var onpC = $('#onp-cell');
 	var onpUserC = $('#onpuser-cell');
 	var ebidC = $('#ebid-cell');
@@ -331,20 +352,17 @@ function workClicked(e){
 	if(e.id === 'onp-cell' && isClickable){
 		workSelected = true;
 		isClickable = false;
-		onp.addClass('onpClicked');
-		onpUser.addClass('onpuserClicked');
-		ebid.addClass('ebidClicked');
-		carpool.addClass('carpoolClicked');
+		portfolioClickedToggle(true);
 		setTimeout(function(){
-			onpC.width('100%');
-			onpC.height('245px');
-			onpC.height('521px');
-			onpUserC.height('0').width('0');
-			ebidC.height('0').width('0');
-			carpoolC.height('0').width('0');
-			onpUserT.width('0').animate({opacity: 0}, 500);
-			ebidT.width('0').animate({opacity: 0}, 500);
-			carpoolT.width('0').animate({opacity: 0}, 500);
+			onpC.width('100%').height('260px').height('521px');
+			//onpC.height('260px');
+			//onpC.height('521px');
+			onpUserC.height('0px').width('0%');
+			ebidC.height('0px').width('0%');
+			carpoolC.height('0px').width('0%');
+			onpUserT.width('0%').height('0px').animate({opacity: 0}, 500);
+			ebidT.width('0%').height('0px').animate({opacity: 0}, 500);
+			carpoolT.width('0%').height('0px').animate({opacity: 0}, 500);
 			setTimeout(function(){
 				setTimeout(function(){
 					isClickable = true;
@@ -361,20 +379,17 @@ function workClicked(e){
 	else if(e.id === 'onpuser-cell' && isClickable){
 		workSelected = true;
 		isClickable = false;
-		onp.addClass('onpClicked');
-		onpUser.addClass('onpuserClicked');
-		ebid.addClass('ebidClicked');
-		carpool.addClass('carpoolClicked');
+		portfolioClickedToggle(true);
 		setTimeout(function(){
-			onpUserC.width('100%');
-			onpUserC.height('245px');
-			onpUserC.height('521px');
-			onpC.height('0').width('0');
-			ebidC.height('0').width('0');
-			carpoolC.height('0').width('0');
-			onpT.width('0').animate({opacity: 0}, 500);
-			ebidT.width('0').animate({opacity: 0}, 500);
-			carpoolT.width('0').animate({opacity: 0}, 500);
+			onpUserC.width('100%').height('260px').height('521px');
+			//onpUserC.height('260px');
+			//onpUserC.height('521px');
+			onpC.height('0px').width('0%');
+			ebidC.height('0px').width('0%');
+			carpoolC.height('0px').width('0%');
+			onpT.width('0%').height('0px').animate({opacity: 0}, 500);
+			ebidT.width('0%').height('0px').animate({opacity: 0}, 500);
+			carpoolT.width('0%').height('0px').animate({opacity: 0}, 500);
 			setTimeout(function(){
 				setTimeout(function(){
 					isClickable = true;
@@ -391,20 +406,17 @@ function workClicked(e){
 	else if(e.id === 'ebid-cell' && isClickable){
 		workSelected = true;
 		isClickable = false;
-		onp.addClass('onpClicked');
-		onpUser.addClass('onpuserClicked');
-		ebid.addClass('ebidClicked');
-		carpool.addClass('carpoolClicked');
+		portfolioClickedToggle(true);
 		setTimeout(function(){
-			ebidC.width('100%');
-			ebidC.height('245px');
-			ebidC.height('521px');
-			onpC.height('0').width('0');
-			onpUserC.height('0').width('0');
-			carpoolC.height('0').width('0');
-			onpT.width('0').animate({opacity: 0}, 500);
-			onpUserT.width('0').animate({opacity: 0}, 500);
-			carpoolT.width('0').animate({opacity: 0}, 500);
+			ebidC.width('100%').height('260px').height('521px');
+			//ebidC.height('260px');
+			//ebidC.height('521px');
+			onpC.height('0px').width('0%');
+			onpUserC.height('0px').width('0%');
+			carpoolC.height('0px').width('0%');
+			onpT.width('0%').height('0px').animate({opacity: 0}, 500);
+			onpUserT.width('0%').height('0px').animate({opacity: 0}, 500);
+			carpoolT.width('0%').height('0px').animate({opacity: 0}, 500);
 			setTimeout(function(){
 				setTimeout(function(){
 					isClickable = true;
@@ -421,20 +433,17 @@ function workClicked(e){
 	else if (isClickable){
 		workSelected = true;
 		isClickable = false;
-		onp.addClass('onpClicked');
-		onpUser.addClass('onpuserClicked');
-		ebid.addClass('ebidClicked');
-		carpool.addClass('carpoolClicked');
+		portfolioClickedToggle(true);
 		setTimeout(function(){
-			carpoolC.width('100%');
-			carpoolC.height('245px');
-			carpoolC.height('521px');
-			onpC.height('0').width('0');
-			onpUserC.height('0').width('0');
-			ebidC.height('0').width('0');
-			onpT.width('0').animate({opacity: 0}, 500);
-			onpUserT.width('0').animate({opacity: 0}, 500);
-			ebidT.width('0').animate({opacity: 0}, 500);
+			carpoolC.width('100%').height('260px').height('521px');
+			//carpoolC.height('260px');
+			//carpoolC.height('521px');
+			onpC.height('0px').width('0%');
+			onpUserC.height('0px').width('0%');
+			ebidC.height('0px').width('0%');
+			onpT.width('0%').height('0px').animate({opacity: 0}, 500);
+			onpUserT.width('0%').height('0px').animate({opacity: 0}, 500);
+			ebidT.width('0%').height('0px').animate({opacity: 0}, 500);
 			setTimeout(function(){
 				setTimeout(function(){
 					isClickable = true;
@@ -448,10 +457,6 @@ function workClicked(e){
 			}, 1000);
 		}, 1250);
 	}
-	onp.removeClass('animate-onp');
-	onpUser.removeClass('animate-onpuser');
-	ebid.removeClass('animate-ebid');
-	carpool.removeClass('animate-carpool');
 	if(workSelected){
 		setTimeout(function(){
 			document.getElementById('closeportfolio').style.display = 'block';
@@ -493,7 +498,7 @@ function setElementPositions(){
 $(document).ready(function(){
 	$(body).animate({scrollTop: 0}, 1);
 	var header = document.getElementById('blur');
-	document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
+	//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
 	var b = $(body);
 	document.addEventListener('wheel', function(){
 		b.stop();
@@ -597,7 +602,7 @@ $(document).ready(function(){
 
 $(window).resize(function(){
 	if($(window).width() != docWidth || $(window).height() != docHeight){
-		document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;	
+		//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;	
 		var bt = body.scrollTop;
 		var stt = Math.abs(skills.offsetTop - bt);
 		var ptt = Math.abs(portfolio.offsetTop - bt);
@@ -679,7 +684,7 @@ $(window).resize(function(){
 	
 $(window).scroll(function(){
 	if(!initLoad){
-		document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
+		//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
 		if(!isMobileWidth()){
 			if(aboutMeCardPositions()){
 				if(portfolioCardPostions()){
