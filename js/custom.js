@@ -21,6 +21,9 @@ var portfolioTableJQ = $('#portfolio-table');
 var skills = document.getElementById('skillstitle');
 var skillsText = document.getElementById('skillstext');
 
+var port = $('#portfolio');
+var ski = $('#skills');
+
 var onpCell = $('#onp-cell');
 var onpUserCell = $('#onpuser-cell');
 var ebidCell = $('#ebid-cell');
@@ -53,8 +56,8 @@ var profilePic = document.getElementById('profilepic');
 var downloadingImage = new Image();
 downloadingImage.onload = function(){
     profilePic.src = this.src;
-	
 	displayContent();
+	setHeightsEven();
 	abw = aboutMe.offsetWidth;
 	abh = aboutMe.offsetHeight;
 	abtw = aboutMeText.offsetWidth;
@@ -65,7 +68,6 @@ downloadingImage.onload = function(){
 	sh = skills.offsetHeight;
 	stw = skillsText.offsetWidth;
 	sth = skillsText.offsetHeight;
-	setHeightsEven();
 	if(!isMobileWidth()){
 		if(aboutMeCardPositions()){
 			if(portfolioCardPostions()){
@@ -158,24 +160,19 @@ function skillsCardPostions(){
 	
 	if(pgt < stxt){
 		var percentH = pgt/stxt;
+		var percentW = pgt/st;
 		var amountH = (((sth * percentH) - sth)*-2) + 'px';
+		var amountW = ((((sh * percentW) - sh))*-2) + 'px';
 		skillsText.style.top = amountH;
+		skills.style.top = amountW;
 		if(amountH !== '0px'){
 			setTimeout(function(){shrinkGraphs();}, 250);
 		}
 	}
 	else{
 		skillsText.style.top = 0;
+		skills.style.top = 0;
 		setTimeout(function(){animateGraphs();}, 250);
-	}
-	
-	if(pgt < st){
-		var percentW = pgt/st;
-		var amountW = ((((sw * percentW) - sw))*3) + 'px';
-		skills.style.left = amountW;
-	}
-	else{
-		skills.style.left = 0;
 	}
 	
 	return false;
@@ -207,19 +204,24 @@ function shrinkGraphs(){
 }
 
 function setHeightsEven(){
+		abw = aboutMe.offsetWidth;
+	var tabh = aboutMe.offsetHeight;
+	var tabth = aboutMeText.offsetHeight;
+	var tsh = skills.offsetHeight;
+	var tsth = skillsText.offsetHeight;
 	if(!isMobileWidth()){		
-		if(abh < abth){
-			aboutMe.style.height = abth + 'px';
+		if(tabh < tabth){
+			aboutMe.style.height = tabth + 'px';
 		}
 		else{
-			aboutMeText.style.height = abh + 'px';
+			aboutMeText.style.height = tabh + 'px';
 		}
 		
-		if(sh < sth){
-			skills.style.height = sth + 'px';
+		if(tsh < tsth){
+			skills.style.height = tsth + 'px';
 		}
 		else{
-			skillsText.style.height = sh + 'px';
+			skillsText.style.height = tsh + 'px';
 		}
 	}
 }
@@ -698,9 +700,29 @@ $(window).resize(function(){
 	}
 	return false;
 });
-	
+
+var prevPP;
+var prevS;
 $(window).scroll(function(){
 	if(!initLoad){
+		if(prevPP !== positionPortfolio){
+			if(positionPortfolio){
+				port.removeClass('hidden');
+			}
+			else{
+				port.addClass('hidden');
+			}
+		}
+		if(prevS !== positionSkills){
+			if(positionSkills){
+				ski.removeClass('hidden');
+			}
+			else{
+				ski.addClass('hidden');
+			}
+		}
+		prevPP = positionPortfolio;
+		prevS = positionSkills;
 		//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
 		if(!isMobileWidth()){
 			if(aboutMeCardPositions()){
