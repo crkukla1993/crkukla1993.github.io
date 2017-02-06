@@ -705,26 +705,26 @@ var prevPP;
 var prevS;
 $(window).scroll(function(){
 	if(!initLoad){
-		if(prevPP !== positionPortfolio){
-			if(positionPortfolio){
-				port.removeClass('hidden');
-			}
-			else{
-				port.addClass('hidden');
-			}
-		}
-		if(prevS !== positionSkills){
-			if(positionSkills){
-				ski.removeClass('hidden');
-			}
-			else{
-				ski.addClass('hidden');
-			}
-		}
-		prevPP = positionPortfolio;
-		prevS = positionSkills;
 		//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;
 		if(!isMobileWidth()){
+			if(prevPP !== positionPortfolio){
+				if(positionPortfolio){
+					port.removeClass('hidden');
+				}
+				else{
+					port.addClass('hidden');
+				}
+			}
+			if(prevS !== positionSkills){
+				if(positionSkills){
+					ski.removeClass('hidden');
+				}
+				else{
+					ski.addClass('hidden');
+				}
+			}
+			prevPP = positionPortfolio;
+			prevS = positionSkills;
 			if(aboutMeCardPositions()){
 				if(portfolioCardPostions()){
 					skillsCardPostions();
