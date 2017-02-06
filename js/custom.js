@@ -751,6 +751,10 @@ $(window).scroll(function(){
 				downArrow.animate({opacity: 0}, {queue: false, duration: 300});
 			}*/
 		}
+		else{
+			port.removeClass('hidden');
+			ski.removeClass('hidden');
+		}
 	}
 	else{
 		initLoad = false;
