@@ -52,8 +52,7 @@ a{
 
 #portfolio-table{
 	width: 100%;
-	height: 551px;
-	padding-bottom: 1.5em;
+	height: 100%;
 }
 
 
@@ -83,7 +82,11 @@ a{
 #onp{
 	height: 100%;
 	width: 100%;
-	background-image: url("../imgs/onp.jpg");
+	background: url("https://crkukla1993.github.io/imgs/onp.jpg") no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	-webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
     -moz-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
 	-ms-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
@@ -98,7 +101,11 @@ a{
 #onpuser{
 	height: 100%;
 	width: 100%;
-	background-image: url("../imgs/onpuser.jpg");
+	background: url("https://crkukla1993.github.io/imgs/onpuser.jpg") no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	-webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
     -moz-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
 	-ms-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
@@ -113,7 +120,11 @@ a{
 #ebid{
 	height: 100%;
 	width: 100%;
-	background-image: url("../imgs/ebid.jpg");
+	background: url("https://crkukla1993.github.io/imgs/ebid.jpg") no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	-webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
     -moz-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
 	-ms-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
@@ -128,7 +139,11 @@ a{
 #carpool{
 	height: 100%;
 	width: 100%;
-	background-image: url("../imgs/carpool.jpg");
+	background: url("https://crkukla1993.github.io/imgs/carpool.jpg") no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	-webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
     -moz-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
 	-ms-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
@@ -238,6 +253,7 @@ a{
 	top: 0;
 	left: 0;
 	z-index: 50;
+	width: 37%;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	background: #607D8B;
 }
@@ -267,7 +283,9 @@ a{
 #aboutmetext{
 	position: absolute;
 	top: 0;
+	right: 0;
 	z-index: 49;
+	width: 63%;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	background: #f5f5f5;
 }
@@ -277,11 +295,14 @@ a{
 }
 
 #aboutmetext p{
+	opacity: 0;
 	color: black;
 }
 
 #portfoliotitle{
 	top: 0;
+	margin-top: 0;
+	width: 100%;
 	position: absolute;
 	z-index: 35;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -300,13 +321,14 @@ a{
 #skillstitle{
 	position: absolute;
 	top: 0;
+	width: 37%;
 	z-index: 25;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	background: #455A64;
 }
 
 #skillstitle div{
-	padding: 0 1.5em 1.5em 1.5em;
+	padding: 0 2em 2em 2em;
 }
 
 #skillstitle p{
@@ -317,13 +339,15 @@ a{
 #skillstitle h1{
 	text-shadow: 0 1px 2px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
 	color: #f5f5f5;
-	padding-left: 0.75em;
+	padding-left: 1em;
 	margin-top: 0;
 	padding-top: 0.75em;
 }
 
 #skillstext{
 	top: 0;
+	right: 0;
+	width: 63%;
 	position: absolute;
 	z-index: 20;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -346,7 +370,7 @@ a{
 }
 
 #secondary-title{
-	z-index: 1;
+	z-index: 27;
 	font-family: Consolas;
 	font-weight: 400;
 	display: inline-block;
@@ -355,7 +379,8 @@ a{
 }
 
 #blur{
-	z-index:-999999;
+	z-index:26;
+	width: 100%;
 	top: 0;
 	left: 0;
 	margin-top: -0.75em;
@@ -377,7 +402,7 @@ a{
 }*/
 
 #header-div table{
-	z-index: 3;
+	z-index: 27;
 	width: 100%;
 	position: absolute;
 	top: 0;
@@ -385,7 +410,7 @@ a{
 }
 
 #header-title{
-	z-index: 1;
+	z-index: 27;
 	font-family: Consolas;
 	font-weight: 400;
 	margin-top: 13%;
@@ -423,18 +448,25 @@ a{
 
 #skills-table{
 	float: left;
-	padding-bottom: 1.5em;
+}
+
+.skills-table span{
+	-webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+	transition: all 0.5s;
 }
 
 #navbar-custom{
-	z-index: 4;
+	z-index: 27;
 	margin-top: -5%;
 	display:none;
 }
 
 .header-btn{
 	display: inline-block;
-	z-index: 5;
+	z-index: 27;
 	margin: 1em;
 	-webkit-transition: background-color 0.3s ease;
     -moz-transition: background-color 0.3s ease;
@@ -480,20 +512,20 @@ a{
 	color: #f5f5f5;
 	margin-left: 0.75em;
 	width: 0;
-	visibility: hidden;
+	opacity: 0;
 	white-space: nowrap;
 	overflow: hidden;
-	-webkit-transition: width 1s, height 1s;
-    -moz-transition: width 1s, height 1s;
-	-ms-transition: width 1s, height 1s;
-    -o-transition: width 1s, height 1s;
-    transition: width 1s, height 1s;
+	-webkit-transition: width 1s, height 1s, opacity 0.3s;
+    -moz-transition: width 1s, height 1s, opacity 0.3s;
+	-ms-transition: width 1s, height 1s, opacity 0.3s;
+    -o-transition: width 1s, height 1s, opacity 0.3s;
+    transition: width 1s, height 1s, opacity 0.3s;
 }
 
 .pl-div div{
 	padding-left: 0!important;
 	margin-left: 0!important;
-	visibility: hidden;
+	opacity: 0;
 	display: inline;
 }
 
@@ -516,6 +548,7 @@ a{
 	color: white;
 	font-weight: bold;
 	position: relative;
+	opacity: 0;
 }
 
 /*.tdSkill{
@@ -543,6 +576,54 @@ a{
 .downarrow-mobile{
 	width: 50px!important;
 	margin-left: -25px!important;
+}
+.img-title{
+	font-size: 1.5em;
+}
+
+#onp:hover{
+	cursor: pointer;
+	background-image: url("https://crkukla1993.github.io/imgs/g1.jpg");
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	-webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-moz-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-ms-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-o-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+}
+
+#onpuser:hover{
+	cursor: pointer;
+	background: url("https://crkukla1993.github.io/imgs/g2.jpg");
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	-webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-moz-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-ms-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-o-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+}
+
+#ebid:hover{
+	cursor: pointer;
+	background: url("https://crkukla1993.github.io/imgs/g3.jpg");
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	-webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-moz-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-ms-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-o-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+}
+
+#carpool:hover{
+	cursor: pointer;
+	background: url("https://crkukla1993.github.io/imgs/g4.jpg");
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	-webkit-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-moz-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-ms-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-ms-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	-o-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+	transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
 }
 /*
 @media screen and (max-width: 499px) {
@@ -662,26 +743,31 @@ a{
 	#aboutmetitle{
 		margin-top: -1.25em;
 		width: 100%;
+		height: auto;
 		top: 0;
  		position: relative;
 	}
 	#portfoliotitle{
+		margin-top: 0;
 		width: 100%;
 		left: 0;
 		position: relative;
 	}
 	#skillstitle{
 		width: 100%;
+		height: auto;
 		top: 0;
 		position: relative;
 	}
 	#aboutmetext{
 		width: 100%;
+		height: auto;
 		top: 0;
 		position: relative;
 	}
 	#skillstext{
 		width: 100%;
+		height: auto;
 		top: 0;
 		position: relative;
 	}
@@ -719,7 +805,7 @@ a{
 	}
 }
 @media screen and (min-width: 768px){
-	#skillstitle{
+	/*#skillstitle{
 		width: 35%;
 	}
 	
@@ -790,7 +876,7 @@ a{
 		-ms-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
 		-o-transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
 		transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
-	}
+	}*/
 }
 
 @media screen and (min-width: 768px) and (max-width:1023px) {
@@ -938,3 +1024,154 @@ a{
 		font-size: 1em;
 	}
 }*/
+
+@-webkit-keyframes rotateInR {
+    0% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0,0,1,360deg);
+        transform: rotate3d(0,0,1,360deg);
+        opacity: 0
+    }
+
+	50%{
+		opacity: 1;
+	}
+	
+    100% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: none;
+        transform: none;
+		opacity: 1;
+    }
+}
+
+@keyframes rotateInR {
+    0% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0,0,1,360deg);
+        transform: rotate3d(0,0,1,360deg);
+        opacity: 0
+    }
+	
+	50%{
+		opacity: 1;
+	}
+
+    100% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: none;
+        transform: none;
+		opacity: 1;
+    }
+}
+
+@-webkit-keyframes rotateInL {
+    0% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0,0,1,-360deg);
+        transform: rotate3d(0,0,1,-360deg);
+        opacity: 0
+    }
+
+	50%{
+		opacity: 1;
+	}
+	
+    100% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: none;
+        transform: none;
+		opacity: 1;
+    }
+}
+
+@keyframes rotateInL {
+    0% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0,0,1,-360deg);
+        transform: rotate3d(0,0,1,-360deg);
+        opacity: 0
+    }
+	
+	50%{
+		opacity: 1;
+	}
+
+    100% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: none;
+        transform: none;
+		opacity: 1;
+    }
+}
+
+.rotateInL {
+	-webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+    -webkit-animation-name: rotateInL;
+    animation-name: rotateInL;
+}
+
+.rotateInR {
+	-webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+    -webkit-animation-name: rotateInR;
+    animation-name: rotateInR;
+}
+
+@-webkit-keyframes fadeL {
+    0% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        opacity: 0
+    }
+	
+    100% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+		opacity: 1;
+    }
+}
+
+@keyframes fadeL {
+    0% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        opacity: 0
+    }
+
+    100% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+		opacity: 1;
+    }
+}
+
+.fadeL {
+	-webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+    -webkit-animation-name: fadeL;
+    animation-name: fadeL;
+}

@@ -79,7 +79,7 @@ downloadingImage.onload = function(){
 		animateGraphs();
 	}
 	setElementPositions();
-	$(body).animate({scrollTop: 0}, 1);
+	$(body).animate({scrollTop: 0}, 10);
 	initLoad = true;
 };
 downloadingImage.src = 'https://crkukla1993.github.io/imgs/me.jpg';
@@ -131,6 +131,7 @@ function portfolioCardPostions(){
 			onpUser.removeClass('onpuserClicked');
 			ebid.removeClass('ebidClicked');
 			carpool.removeClass('carpoolClicked');
+			
 			if(!isMobileWidth()){
 				onp.addClass('animate-onp');
 				onpUser.addClass('animate-onpuser');
@@ -160,11 +161,9 @@ function skillsCardPostions(){
 	
 	if(pgt < stxt){
 		var percentH = pgt/stxt;
-		var percentW = pgt/st;
 		var amountH = (((sth * percentH) - sth)*-2) + 'px';
-		var amountW = ((((sh * percentW) - sh))*-2) + 'px';
 		skillsText.style.top = amountH;
-		skills.style.top = amountW;
+		skills.style.top = amountH;
 		if(amountH !== '0px'){
 			setTimeout(function(){shrinkGraphs();}, 250);
 		}
@@ -228,7 +227,9 @@ function setHeightsEven(){
 
 function isMobileWidth(){
 	var isMobile = false;
+	
 	var tablehtml = portfolioTable.innerHTML;
+	
 	var count = (tablehtml.match(/<tr>/g) || []).length;
 	var index;
 	if(window.innerWidth < 768){
@@ -324,12 +325,10 @@ function portfolioClickedToggle(show){
 	var ebid = $('#ebid');
 	var carpool = $('#carpool');
 	if(show){
-		if(!isMobileWidth()){
-			onp.removeClass('animate-onp');
-			onpUser.removeClass('animate-onpuser');
-			ebid.removeClass('animate-ebid');
-			carpool.removeClass('animate-carpool');
-		}
+		onp.removeClass('animate-onp');
+		onpUser.removeClass('animate-onpuser');
+		ebid.removeClass('animate-ebid');
+		carpool.removeClass('animate-carpool');
 		onp.addClass('onpClicked');
 		onpUser.addClass('onpuserClicked');
 		ebid.addClass('ebidClicked');
@@ -351,127 +350,129 @@ function portfolioClickedToggle(show){
 
 
 function workClicked(e){
-	var onpC = $('#onp-cell');
-	var onpUserC = $('#onpuser-cell');
-	var ebidC = $('#ebid-cell');
-	var carpoolC = $('#carpool-cell');
-	var onpT = $('#onp-title');
-	var onpUserT = $('#onpuser-title');
-	var ebidT = $('#ebid-title');
-	var carpoolT = $('#carpool-title');
-	
-	if(e.id === 'onp-cell' && isClickable){
-		workSelected = true;
-		isClickable = false;
-		portfolioClickedToggle(true);
-		setTimeout(function(){
-			onpC.width('100%').height('260px').height('521px');
-			//onpC.height('260px');
-			//onpC.height('521px');
-			onpUserC.height('0px').width('0%');
-			ebidC.height('0px').width('0%');
-			carpoolC.height('0px').width('0%');
-			onpUserT.width('0%').height('0px').animate({opacity: 0}, 500);
-			ebidT.width('0%').height('0px').animate({opacity: 0}, 500);
-			carpoolT.width('0%').height('0px').animate({opacity: 0}, 500);
+	if(!workSelected){
+		var onpC = $('#onp-cell');
+		var onpUserC = $('#onpuser-cell');
+		var ebidC = $('#ebid-cell');
+		var carpoolC = $('#carpool-cell');
+		var onpT = $('#onp-title');
+		var onpUserT = $('#onpuser-title');
+		var ebidT = $('#ebid-title');
+		var carpoolT = $('#carpool-title');
+		
+		if(e.id === 'onp-cell' && isClickable){
+			workSelected = true;
+			isClickable = false;
+			portfolioClickedToggle(true);
 			setTimeout(function(){
+				onpC.width('100%').height('260px').height('521px');
+				//onpC.height('260px');
+				//onpC.height('521px');
+				onpUserC.height('0px').width('0%');
+				ebidC.height('0px').width('0%');
+				carpoolC.height('0px').width('0%');
+				onpUserT.width('0%').height('0px').animate({opacity: 0}, 500);
+				ebidT.width('0%').height('0px').animate({opacity: 0}, 500);
+				carpoolT.width('0%').height('0px').animate({opacity: 0}, 500);
 				setTimeout(function(){
-					isClickable = true;
-				}, 650);
-				onpUserC.hide();
-				ebidC.hide();
-				carpoolC.hide();
-				onpUserT.hide();
-				ebidT.hide();
-				carpoolT.hide();
-			}, 1000);
-		}, 1250);
-	}
-	else if(e.id === 'onpuser-cell' && isClickable){
-		workSelected = true;
-		isClickable = false;
-		portfolioClickedToggle(true);
-		setTimeout(function(){
-			onpUserC.width('100%').height('260px').height('521px');
-			//onpUserC.height('260px');
-			//onpUserC.height('521px');
-			onpC.height('0px').width('0%');
-			ebidC.height('0px').width('0%');
-			carpoolC.height('0px').width('0%');
-			onpT.width('0%').height('0px').animate({opacity: 0}, 500);
-			ebidT.width('0%').height('0px').animate({opacity: 0}, 500);
-			carpoolT.width('0%').height('0px').animate({opacity: 0}, 500);
+					setTimeout(function(){
+						isClickable = true;
+					}, 650);
+					onpUserC.hide();
+					ebidC.hide();
+					carpoolC.hide();
+					onpUserT.hide();
+					ebidT.hide();
+					carpoolT.hide();
+				}, 1000);
+			}, 1250);
+		}
+		else if(e.id === 'onpuser-cell' && isClickable){
+			workSelected = true;
+			isClickable = false;
+			portfolioClickedToggle(true);
 			setTimeout(function(){
+				onpUserC.width('100%').height('260px').height('521px');
+				//onpUserC.height('260px');
+				//onpUserC.height('521px');
+				onpC.height('0px').width('0%');
+				ebidC.height('0px').width('0%');
+				carpoolC.height('0px').width('0%');
+				onpT.width('0%').height('0px').animate({opacity: 0}, 500);
+				ebidT.width('0%').height('0px').animate({opacity: 0}, 500);
+				carpoolT.width('0%').height('0px').animate({opacity: 0}, 500);
 				setTimeout(function(){
-					isClickable = true;
-				}, 650);
-				onpC.hide();
-				ebidC.hide();
-				carpoolC.hide();
-				onpT.hide();
-				ebidT.hide();
-				carpoolT.hide();
-			}, 1000);
-		}, 1250);
-	}
-	else if(e.id === 'ebid-cell' && isClickable){
-		workSelected = true;
-		isClickable = false;
-		portfolioClickedToggle(true);
-		setTimeout(function(){
-			ebidC.width('100%').height('260px').height('521px');
-			//ebidC.height('260px');
-			//ebidC.height('521px');
-			onpC.height('0px').width('0%');
-			onpUserC.height('0px').width('0%');
-			carpoolC.height('0px').width('0%');
-			onpT.width('0%').height('0px').animate({opacity: 0}, 500);
-			onpUserT.width('0%').height('0px').animate({opacity: 0}, 500);
-			carpoolT.width('0%').height('0px').animate({opacity: 0}, 500);
+					setTimeout(function(){
+						isClickable = true;
+					}, 650);
+					onpC.hide();
+					ebidC.hide();
+					carpoolC.hide();
+					onpT.hide();
+					ebidT.hide();
+					carpoolT.hide();
+				}, 1000);
+			}, 1250);
+		}
+		else if(e.id === 'ebid-cell' && isClickable){
+			workSelected = true;
+			isClickable = false;
+			portfolioClickedToggle(true);
 			setTimeout(function(){
+				ebidC.width('100%').height('260px').height('521px');
+				//ebidC.height('260px');
+				//ebidC.height('521px');
+				onpC.height('0px').width('0%');
+				onpUserC.height('0px').width('0%');
+				carpoolC.height('0px').width('0%');
+				onpT.width('0%').height('0px').animate({opacity: 0}, 500);
+				onpUserT.width('0%').height('0px').animate({opacity: 0}, 500);
+				carpoolT.width('0%').height('0px').animate({opacity: 0}, 500);
 				setTimeout(function(){
-					isClickable = true;
-				}, 650);
-				onpC.hide();
-				onpUserC.hide();
-				carpoolC.hide();
-				onpT.hide();
-				onpUserT.hide();
-				carpoolT.hide();
-			}, 1000);
-		}, 1250);
-	}
-	else if (isClickable){
-		workSelected = true;
-		isClickable = false;
-		portfolioClickedToggle(true);
-		setTimeout(function(){
-			carpoolC.width('100%').height('260px').height('521px');
-			//carpoolC.height('260px');
-			//carpoolC.height('521px');
-			onpC.height('0px').width('0%');
-			onpUserC.height('0px').width('0%');
-			ebidC.height('0px').width('0%');
-			onpT.width('0%').height('0px').animate({opacity: 0}, 500);
-			onpUserT.width('0%').height('0px').animate({opacity: 0}, 500);
-			ebidT.width('0%').height('0px').animate({opacity: 0}, 500);
+					setTimeout(function(){
+						isClickable = true;
+					}, 650);
+					onpC.hide();
+					onpUserC.hide();
+					carpoolC.hide();
+					onpT.hide();
+					onpUserT.hide();
+					carpoolT.hide();
+				}, 1000);
+			}, 1250);
+		}
+		else if (e.id === 'carpool-cell' && isClickable){
+			workSelected = true;
+			isClickable = false;
+			portfolioClickedToggle(true);
 			setTimeout(function(){
+				carpoolC.width('100%').height('260px').height('521px');
+				//carpoolC.height('260px');
+				//carpoolC.height('521px');
+				onpC.height('0px').width('0%');
+				onpUserC.height('0px').width('0%');
+				ebidC.height('0px').width('0%');
+				onpT.width('0%').height('0px').animate({opacity: 0}, 500);
+				onpUserT.width('0%').height('0px').animate({opacity: 0}, 500);
+				ebidT.width('0%').height('0px').animate({opacity: 0}, 500);
 				setTimeout(function(){
-					isClickable = true;
-				}, 650);
-				onpC.hide();
-				onpUserC.hide();
-				ebidC.hide();
-				onpT.hide();
-				onpUserT.hide();
-				ebidT.hide();
-			}, 1000);
-		}, 1250);
-	}
-	if(workSelected){
-		setTimeout(function(){
-			document.getElementById('closeportfolio').style.display = 'block';
-		}, 2500);
+					setTimeout(function(){
+						isClickable = true;
+					}, 650);
+					onpC.hide();
+					onpUserC.hide();
+					ebidC.hide();
+					onpT.hide();
+					onpUserT.hide();
+					ebidT.hide();
+				}, 1000);
+			}, 1250);
+		}
+		if(workSelected){
+			setTimeout(function(){
+				document.getElementById('closeportfolio').style.display = 'block';
+			}, 2500);
+		}
 	}
 }
 
@@ -479,11 +480,11 @@ function setElementPositions(){
 	var a = document.getElementById('aboutme');
 	var p = document.getElementById('portfolio');
 	var s = document.getElementById('skills');
-	var ah = document.getElementById('aboutmetitle').scrollHeight;
-	var ah2 = document.getElementById('aboutmetext').scrollHeight;
-	var ph = document.getElementById('portfoliotitle').scrollHeight;
-	var sh = document.getElementById('skillstitle').scrollHeight;
-	var sh2 = document.getElementById('skillstext').scrollHeight;
+	var ah = document.getElementById('aboutmetitle').offsetHeight;
+	var ah2 = document.getElementById('aboutmetext').offsetHeight;
+	var ph = document.getElementById('portfoliotitle').offsetHeight;
+	var sh = document.getElementById('skillstitle').offsetHeight;
+	var sh2 = document.getElementById('skillstext').offsetHeight;
 	if(window.innerWidth < 768){
 		aboutMe.removeAttribute("style");
 		aboutMeText.removeAttribute("style");
@@ -497,7 +498,6 @@ function setElementPositions(){
 	else{
 		aboutMeText.style.top = 0;
 		portfolio.style.top = 0;
-		skillsText.style.top = 0;
 		s.style.top = 0;
 		a.style.height = ah + 'px';
 		p.style.height = ph + 'px';
@@ -610,12 +610,13 @@ $(document).ready(function(){
 });
 
 $(window).resize(function(){
-	if($(window).width() != docWidth || $(window).height() != docHeight){
+	var onp = $('#onp');
+	var onpUser = $('#onpuser');
+	var ebid = $('#ebid');
+	var carpool = $('#carpool');
+	//if($(window).width() != docWidth || $(window).height() != docHeight){
 		//document.getElementById('wh').innerHTML = 'width: ' + window.innerWidth + ' height: ' + window.innerHeight;	
 		var bt = window.pageYOffset;
-		var stt = Math.abs(skills.offsetTop - bt);
-		var ptt = Math.abs(portfolio.offsetTop - bt);
-		var amtt = Math.abs(aboutMe.offsetTop - bt);
 		var h = $(window).height();
 		var w = $(window).width();
 		
@@ -634,9 +635,19 @@ $(window).resize(function(){
 		var windowWid = window.innerWidth;
 		if(windowWid < 768){
 			htmp = h*0.2;
+			onp.removeClass('animate-onp');
+			onpUser.removeClass('animate-onpuser');
+			ebid.removeClass('animate-ebid');
+			carpool.removeClass('animate-carpool');
 		}
 		else{
 			htmp = h*0.3;
+			if(!workSelected){
+				onp.addClass('animate-onp');
+				onpUser.addClass('animate-onpuser');
+				ebid.addClass('animate-ebid');
+				carpool.addClass('animate-carpool');
+			}
 		}
 		
 		if(windowWid < 435){
@@ -660,21 +671,6 @@ $(window).resize(function(){
 		headerDiv.width(w);
 		headerDiv.height(h);
 		
-		/*if(window.innerWidth >= 768){	
-			if(stt < ptt){
-				body.scrollTop = skills.offsetTop;
-			}
-			else if(ptt < amtt && ptt < stt){
-				body.scrollTop = portfolio.offsetTop;
-			}
-			else if(amtt < bt){
-				body.scrollTop = aboutMe.offsetTop;
-			}
-			else{
-				body.scrollTop = 0;
-			}
-		}*/
-		closePortfolio();
 		abw = aboutMe.offsetWidth;
 		abh = aboutMe.offsetHeight;
 		abtw = aboutMeText.offsetWidth;
@@ -697,7 +693,8 @@ $(window).resize(function(){
 			animateGraphs();
 		}
 		setElementPositions();
-	}
+		closePortfolio();
+	//}
 	return false;
 });
 
@@ -761,7 +758,7 @@ $(window).scroll(function(){
 	}
 });
 
-portfolioTableJQ.on('mouseenter', 'td', function(e){
+/*portfolioTableJQ.on('mouseenter', 'td', function(e){
 	if(e.currentTarget.id === 'onp-cell'){
 		document.getElementById('onp-desc').style.display = 'inline';
 	}
@@ -789,7 +786,7 @@ portfolioTableJQ.on('mouseleave', 'td', function(e){
 	else if(e.currentTarget.id === 'carpool-cell'){
 		document.getElementById('carpool-desc').style.display = 'none';
 	}
-});
+});*/
 
 portfolioTableJQ.on('click', 'td', function(e){
 	workClicked(this);

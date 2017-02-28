@@ -1,0 +1,16 @@
+var preG1 = new Image();
+preG1.src = 'https://crkukla1993.github.io/imgs/g1.jpg';
+var preG2 = new Image();
+preG2.src = 'https://crkukla1993.github.io/imgs/g2.jpg';
+var preG3 = new Image();
+preG3.src = 'https://crkukla1993.github.io/imgs/g3.jpg';
+var preG4 = new Image();
+preG4.src = 'https://crkukla1993.github.io/imgs/g4.jpg';
+var preP1 = new Image();
+preP1.src = 'https://crkukla1993.github.io/imgs/onp.jpg';
+var preP2 = new Image();
+preP2.src = 'https://crkukla1993.github.io/imgs/onpuser.jpg';
+var preP3 = new Image();
+preP3.src = 'https://crkukla1993.github.io/imgs/ebid.jpg';
+var preP4 = new Image();
+preP4.src = 'https://crkukla1993.github.io/imgs/carpool.jpg';
